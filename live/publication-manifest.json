@@ -1,0 +1,19 @@
+{
+  "runId": "local-real-api-20261005",
+  "files": [
+    "baseline-comparison.json",
+    "checklist.json",
+    "evidence-index.json",
+    "evidence/report--adapter-controlled--summary.json",
+    "evidence/report--consumer-controlled--summary.json",
+    "evidence/report--control-supplement--summary.json",
+    "evidence/report--crossrepo--frontend-summary.json",
+    "evidence/report--crossrepo--schema-results.json",
+    "evidence/report--scenario-evidence--summary.json",
+    "evidence/transport--correlated-evidence.json",
+    "evidence/transport--server_controls--curated-results.json",
+    "provenance.json",
+    "report.html",
+    "test-case-results.json"
+  ]
+}

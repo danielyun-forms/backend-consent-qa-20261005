@@ -1,0 +1,1330 @@
+{
+  "runId": "local-real-api-20261005",
+  "entries": [
+    {
+      "id": "crossrepo-frontend-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:45:45.548758+00:00",
+      "sourceRevision": "5c174384ca8ade15c3e5b3b4e6b25cb7df55ca63",
+      "artifact": "evidence/report--crossrepo--frontend-summary.json",
+      "summary": "Four freshly executed Jest suites;166/166 pass; zero console warnings; cache reads disabled.",
+      "interceptedBoundaries": [
+        "Outgoing API wrapper mocked; no real HTTP/queue/DB execution."
+      ]
+    },
+    {
+      "id": "crossrepo-proto-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:45:35.219269+00:00",
+      "sourceRevision": "cbb7617458f5a345a733e99a30ffe88b0257de81",
+      "artifact": "evidence/report--crossrepo--schema-results.json",
+      "summary": "Five fresh generated protobuf serialization/schema checks pass.",
+      "interceptedBoundaries": [
+        "In-process serialization only; no publisher or consumer."
+      ]
+    },
+    {
+      "id": "consumer-controlled-unit-existing-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:53:22.962589+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--consumer-controlled--summary.json",
+      "summary": "27 fresh controlled test executions in unit-existing.",
+      "interceptedBoundaries": [
+        "Direct consumer/service invocation, not HTTP or real broker delivery.",
+        "Outgoing event/publishing boundaries intercepted."
+      ]
+    },
+    {
+      "id": "consumer-controlled-unit-probes-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:54:27.009799+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--consumer-controlled--summary.json",
+      "summary": "18 fresh controlled test executions in unit-probes.",
+      "interceptedBoundaries": [
+        "Direct consumer/service invocation, not HTTP or real broker delivery.",
+        "Outgoing event/publishing boundaries intercepted."
+      ]
+    },
+    {
+      "id": "consumer-controlled-integration-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T01:02:07.488547+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--consumer-controlled--summary.json",
+      "summary": "55 fresh controlled test executions in integration.",
+      "interceptedBoundaries": [
+        "Direct consumer/service invocation, not HTTP or real broker delivery.",
+        "Outgoing event/publishing boundaries intercepted."
+      ]
+    },
+    {
+      "id": "consumer-controlled-pair-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T01:03:17.842584+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--consumer-controlled--summary.json",
+      "summary": "1 fresh controlled test executions in pair.",
+      "interceptedBoundaries": [
+        "Direct consumer/service invocation, not HTTP or real broker delivery.",
+        "Outgoing event/publishing boundaries intercepted."
+      ]
+    },
+    {
+      "id": "controls-suite-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:45:07.369719+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--control-supplement--summary.json",
+      "summary": "12 freshly executed controls passed; disposable Redis rollout sampling and mocked signal assertions.",
+      "interceptedBoundaries": [
+        "Injected protection decision; permission write boundary mocked; no live HTTP/queue."
+      ]
+    },
+    {
+      "id": "openapi-generation-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:56:51.272272+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--control-supplement--summary.json",
+      "summary": "Fresh OpenAPI generation succeeds; no breaking-diff baseline verified.",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "live-first-open-allow-open_allow-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "first-open-allow",
+      "mode": "http",
+      "recordedAt": "2026-10-06T00:52:24.011928+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "first-open-allow/open_allow: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "first-open-allow/open_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-first-open-allow-open_allow-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "first-open-allow",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T00:52:24.011928+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "first-open-allow/open_allow: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "first-open-allow/open_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-first-open-allow-open_allow-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "first-open-allow",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T00:52:24.011928+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "first-open-allow/open_allow: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "first-open-allow/open_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-http-preflight-email_empty-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "http-preflight",
+      "mode": "http",
+      "recordedAt": "2026-10-06T00:49:39.200052+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "http-preflight/email_empty: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "http-preflight/email_empty",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-open_allow-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/open_allow: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/open_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-open_allow-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/open_allow: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/open_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-open_allow-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/open_allow: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/open_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-click_deny-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/click_deny: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/click_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-click_deny-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/click_deny: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/click_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-click_deny-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/click_deny: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/click_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_mixed-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_mixed: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_mixed",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_mixed-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_mixed: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_mixed",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_mixed-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_mixed: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_mixed",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-marketing_only-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/marketing_only: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/marketing_only",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-marketing_only-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/marketing_only: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/marketing_only",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-marketing_only-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/marketing_only: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/marketing_only",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-implicit_marketing-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/implicit_marketing: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/implicit_marketing",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-implicit_marketing-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/implicit_marketing: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/implicit_marketing",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-implicit_marketing-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/implicit_marketing: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/implicit_marketing",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-deprecated_flat-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/deprecated_flat: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/deprecated_flat",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-deprecated_flat-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/deprecated_flat: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/deprecated_flat",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-deprecated_flat-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/deprecated_flat: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/deprecated_flat",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-deprecated_nested-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/deprecated_nested: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/deprecated_nested",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-deprecated_nested-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/deprecated_nested: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/deprecated_nested",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-deprecated_nested-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/deprecated_nested: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/deprecated_nested",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-marketing_and_tracking-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/marketing_and_tracking: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/marketing_and_tracking",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-marketing_and_tracking-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/marketing_and_tracking: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/marketing_and_tracking",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-marketing_and_tracking-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/marketing_and_tracking: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/marketing_and_tracking",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_both_allow-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_both_allow: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_both_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_both_allow-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_both_allow: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_both_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_both_allow-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_both_allow: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_both_allow",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_both_deny-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_both_deny: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_both_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_both_deny-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_both_deny: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_both_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-tracking_both_deny-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/tracking_both_deny: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/tracking_both_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_allow_1-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_allow_1: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_allow_1",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_allow_1-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_allow_1: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_allow_1",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_allow_1-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_allow_1: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_allow_1",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_deny-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_deny: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_deny-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_deny: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_deny-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_deny: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_deny",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_allow_2-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_allow_2: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_allow_2",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_allow_2-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_allow_2: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_allow_2",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-live-queue-sequence_allow_2-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "live-queue",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:00:39.142351+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "live-queue/sequence_allow_2: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "live-queue/sequence_allow_2",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-missing_email-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "http",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/missing_email: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/missing_email",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-missing_email-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/missing_email: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/missing_email",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-missing_email-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/missing_email: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/missing_email",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-email_empty-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "http",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/email_empty: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/email_empty",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-email_empty-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/email_empty: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/email_empty",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-email_empty-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/email_empty: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/email_empty",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-email_unknown_field-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "http",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/email_unknown_field: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/email_unknown_field",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-email_unknown_field-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/email_unknown_field: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/email_unknown_field",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-email_unknown_field-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/email_unknown_field: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/email_unknown_field",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-invalid_consent-http",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "http",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/invalid_consent: http evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/invalid_consent",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-invalid_consent-queue",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/invalid_consent: queue evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/invalid_consent",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "live-validation-invalid_consent-persistence",
+      "runId": "local-real-api-20261005",
+      "transportBatch": "validation",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T00:54:15.952577+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--correlated-evidence.json",
+      "summary": "validation/invalid_consent: persistence evidence, independently correlated; no per-message ACK identity is captured.",
+      "interceptedBoundaries": [],
+      "alias": "validation/invalid_consent",
+      "claimBoundary": "HTTP acceptance, persisted snapshot, consumer handler finish, and broker counters are separate fields; per-message ACK is unverified."
+    },
+    {
+      "id": "adapter-controlled-fresh",
+      "runId": "local-real-api-20261005",
+      "mode": "controlled",
+      "recordedAt": "2026-10-06T00:46:01.915510+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--adapter-controlled--summary.json",
+      "summary": "52 fresh controlled DTO/adapter/publisher assertions pass. No real transport in this supplement."
+    },
+    {
+      "id": "environment-scenarios-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:06:22.988755+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--scenario-evidence--summary.json",
+      "summary": "Actual local failure and direct-message scenarios; HTTP applies to fault cases, while legacy/no-email/mismatch messages are directly published to Pulsar. Scoped fault injection; no per-message ACK identifier."
+    },
+    {
+      "id": "environment-scenarios-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:06:22.988755+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--scenario-evidence--summary.json",
+      "summary": "Actual local failure and direct-message scenarios; HTTP applies to fault cases, while legacy/no-email/mismatch messages are directly published to Pulsar. Scoped fault injection; no per-message ACK identifier."
+    },
+    {
+      "id": "environment-scenarios-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:06:22.988755+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/report--scenario-evidence--summary.json",
+      "summary": "Actual local failure and direct-message scenarios; HTTP applies to fault cases, while legacy/no-email/mismatch messages are directly published to Pulsar. Scoped fault injection; no per-message ACK identifier."
+    },
+    {
+      "id": "control-tracking-off-only-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:20:58.739753+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "tracking-off-only: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-tracking-off-only-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:20:58.739753+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "tracking-off-only: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-tracking-off-only-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "tracking-off-only: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-tracking-off-mixed-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:21:00.091761+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "tracking-off-mixed: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-tracking-off-mixed-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:21:00.091761+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "tracking-off-mixed: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-tracking-off-mixed-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "tracking-off-mixed: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-open-allow-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:22:06.349503+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-open-allow: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-open-allow-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:22:06.349503+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-open-allow: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-open-allow-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-open-allow: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-click-deny-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:22:06.714796+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-click-deny: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-click-deny-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:22:06.714796+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-click-deny: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-click-deny-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-click-deny: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-mixed-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:22:07.435629+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-mixed: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-mixed-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:22:07.435629+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-mixed: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-mixed-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-mixed: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-protection-subscribed-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:22:07.873512+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "protection-subscribed: HTTP 202",
+      "interceptedBoundaries": [
+        "Scoped email protection eligibility forced on; released BLOCK policy result injected; downstream processing real."
+      ]
+    },
+    {
+      "id": "control-protection-subscribed-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:22:07.873512+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "protection-subscribed: Persisted state/readback recorded",
+      "interceptedBoundaries": [
+        "Scoped email protection eligibility forced on; released BLOCK policy result injected; downstream processing real."
+      ]
+    },
+    {
+      "id": "control-protection-subscribed-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "protection-subscribed: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": [
+        "Scoped email protection eligibility forced on; released BLOCK policy result injected; downstream processing real."
+      ]
+    },
+    {
+      "id": "control-protection-unsubscribed-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:22:08.300188+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "protection-unsubscribed: HTTP 202",
+      "interceptedBoundaries": [
+        "Scoped email protection eligibility forced on; released BLOCK policy result injected; downstream processing real."
+      ]
+    },
+    {
+      "id": "control-protection-unsubscribed-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:22:08.300188+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "protection-unsubscribed: Persisted state/readback recorded",
+      "interceptedBoundaries": [
+        "Scoped email protection eligibility forced on; released BLOCK policy result injected; downstream processing real."
+      ]
+    },
+    {
+      "id": "control-protection-unsubscribed-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "protection-unsubscribed: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": [
+        "Scoped email protection eligibility forced on; released BLOCK policy result injected; downstream processing real."
+      ]
+    },
+    {
+      "id": "control-sync-tracking-off-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:23:16.721544+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-tracking-off: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-tracking-off-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:23:16.721544+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-tracking-off: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-tracking-off-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-tracking-off: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-disabled-drop-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:24:25.103737+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-disabled-drop: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-disabled-drop-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:24:25.103737+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-disabled-drop: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-disabled-drop-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "sync-disabled-drop: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-publisher-failure-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:25:30.778890+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "publisher-failure: HTTP 202",
+      "interceptedBoundaries": [
+        "Scoped subscription publisher raises a deliberate exception; real fallback executes."
+      ]
+    },
+    {
+      "id": "control-publisher-failure-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:25:30.778890+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "publisher-failure: Persisted state/readback recorded",
+      "interceptedBoundaries": [
+        "Scoped subscription publisher raises a deliberate exception; real fallback executes."
+      ]
+    },
+    {
+      "id": "control-publisher-failure-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "publisher-failure: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": [
+        "Scoped subscription publisher raises a deliberate exception; real fallback executes."
+      ]
+    },
+    {
+      "id": "control-rate-1-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:25:33.130849+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-1: HTTP 202",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-1-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:25:33.130849+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-1: Persisted state/readback recorded",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-1-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-1: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-2-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:25:33.243266+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-2: HTTP 202",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-2-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:25:33.243266+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-2: Persisted state/readback recorded",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-2-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-2: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-3-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:25:36.373408+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-3: HTTP 429",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-3-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:25:36.373408+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-3: Persisted state/readback recorded",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-rate-3-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "rate-3: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": [
+        "Scoped burst2/min, steady100/min and isolated cache-key namespace; actual configured memcached and limiter logic retained."
+      ]
+    },
+    {
+      "id": "control-disallow-percentage100-http",
+      "runId": "local-real-api-20261005",
+      "mode": "http",
+      "recordedAt": "2026-10-06T01:27:31.669098+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "disallow-percentage100: HTTP 202",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-disallow-percentage100-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:27:31.669098+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "disallow-percentage100: Persisted state/readback recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-disallow-percentage100-queue",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "disallow-percentage100: Subscription topic counters and matching consumer events recorded",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-final-broker-drain",
+      "runId": "local-real-api-20261005",
+      "mode": "queue",
+      "recordedAt": "2026-10-06T01:27:56.284875+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "Regular Subscription partitions drained; unrelated Shopify backlog remains separately visible. Aggregate evidence, no per-message ACK mapping.",
+      "interceptedBoundaries": []
+    },
+    {
+      "id": "control-sync-metadata-persistence",
+      "runId": "local-real-api-20261005",
+      "mode": "persistence",
+      "recordedAt": "2026-10-06T01:23:47.782920+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "artifact": "evidence/transport--server_controls--curated-results.json",
+      "summary": "Read-only persisted permission metadata for real synchronous HTTP identities.",
+      "interceptedBoundaries": []
+    }
+  ]
+}

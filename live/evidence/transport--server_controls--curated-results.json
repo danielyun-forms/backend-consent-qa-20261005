@@ -1,0 +1,4195 @@
+{
+  "runId": "local-real-api-20261005",
+  "recordedAt": "2026-10-06T01:28:36.420356+00:00",
+  "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+  "gates": [
+    {
+      "changedAt": "2026-10-06T01:19:41.309496+00:00",
+      "mode": "tracking-off",
+      "settings": {
+        "tracking_global": true,
+        "tracking_allow": [
+          "WeAFEE"
+        ],
+        "tracking_disallow": [
+          "WeAFEE"
+        ],
+        "tracking_percentage": 0,
+        "kms_kill": false,
+        "sync_kill": false,
+        "sync_allow": [
+          "WeAFEE"
+        ],
+        "sync_percentage": 100.0
+      },
+      "trackingEnabled": false,
+      "cacheWaitCompletedAt": "2026-10-06T01:20:46.314297+00:00"
+    },
+    {
+      "changedAt": "2026-10-06T01:21:00.145939+00:00",
+      "mode": "sync",
+      "settings": {
+        "tracking_global": true,
+        "tracking_allow": [
+          "WeAFEE"
+        ],
+        "tracking_disallow": [],
+        "tracking_percentage": 0,
+        "kms_kill": true,
+        "sync_kill": false,
+        "sync_allow": [
+          "WeAFEE"
+        ],
+        "sync_percentage": 100.0
+      },
+      "trackingEnabled": true,
+      "cacheWaitCompletedAt": "2026-10-06T01:22:05.154620+00:00"
+    },
+    {
+      "changedAt": "2026-10-06T01:22:08.356310+00:00",
+      "mode": "sync-tracking-off",
+      "settings": {
+        "tracking_global": true,
+        "tracking_allow": [
+          "WeAFEE"
+        ],
+        "tracking_disallow": [
+          "WeAFEE"
+        ],
+        "tracking_percentage": 0,
+        "kms_kill": true,
+        "sync_kill": false,
+        "sync_allow": [
+          "WeAFEE"
+        ],
+        "sync_percentage": 100.0
+      },
+      "trackingEnabled": false,
+      "cacheWaitCompletedAt": "2026-10-06T01:23:13.363461+00:00"
+    },
+    {
+      "changedAt": "2026-10-06T01:23:16.777078+00:00",
+      "mode": "drop",
+      "settings": {
+        "tracking_global": true,
+        "tracking_allow": [
+          "WeAFEE"
+        ],
+        "tracking_disallow": [],
+        "tracking_percentage": 0,
+        "kms_kill": true,
+        "sync_kill": true,
+        "sync_allow": [
+          "WeAFEE"
+        ],
+        "sync_percentage": 100.0
+      },
+      "trackingEnabled": true,
+      "cacheWaitCompletedAt": "2026-10-06T01:24:21.782983+00:00"
+    },
+    {
+      "changedAt": "2026-10-06T01:24:25.154003+00:00",
+      "mode": "queue",
+      "settings": {
+        "tracking_global": true,
+        "tracking_allow": [
+          "WeAFEE"
+        ],
+        "tracking_disallow": [],
+        "tracking_percentage": 0,
+        "kms_kill": false,
+        "sync_kill": false,
+        "sync_allow": [
+          "WeAFEE"
+        ],
+        "sync_percentage": 100.0
+      },
+      "trackingEnabled": true,
+      "cacheWaitCompletedAt": "2026-10-06T01:25:30.155929+00:00"
+    },
+    {
+      "mode": "allow-disallow-percentage100",
+      "changedAt": "2026-10-06T01:26:23.177038+00:00",
+      "settings": {
+        "tracking_global": true,
+        "tracking_allow": [
+          "WeAFEE"
+        ],
+        "tracking_disallow": [
+          "WeAFEE"
+        ],
+        "tracking_percentage": 100,
+        "kms_kill": false,
+        "sync_kill": false,
+        "sync_allow": [
+          "WeAFEE"
+        ],
+        "sync_percentage": 100.0
+      },
+      "enabledBeforeDisallow": true,
+      "trackingEnabled": false,
+      "cacheWaitCompletedAt": "2026-10-06T01:27:28.188968+00:00"
+    }
+  ],
+  "restored": {
+    "restoredAt": "2026-10-06T01:27:31.723862+00:00",
+    "mode": "restore",
+    "settings": {
+      "tracking_global": false,
+      "tracking_allow": [],
+      "tracking_disallow": [],
+      "tracking_percentage": 0,
+      "kms_kill": false,
+      "sync_kill": false,
+      "sync_allow": [],
+      "sync_percentage": 100.0
+    },
+    "trackingEnabled": false
+  },
+  "scenarios": [
+    {
+      "scenario": "tracking-off-only",
+      "recordedAt": "2026-10-06T01:20:58.739753+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": false,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 2,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249646.398868,
+        "afterTimestamp": 1791249658.700823
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249646.4487329,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249655.5094872,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249655.521288,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 21,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249655.594204,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "ClientSubscription.TrackingConsentDrop"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249655.594578,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249655.602564,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+      ],
+      "logs": [
+        "ClientSubscription.TrackingConsentDrop"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249655.5094872,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249655.521288,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 21,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "tracking-off-mixed",
+      "recordedAt": "2026-10-06T01:21:00.091761+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": true
+        },
+        "listMembership": true
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47CSD82VQW2F2HGJRYHTD7B",
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": true,
+          "timestamp": "2026-10-06 01:20:59.267487+00:00",
+          "recordedDate": "2026-10-06 01:20:59.267487+00:00",
+          "customerId": "01M47CSD82VQW2F2HGJRYHTD7B",
+          "subjectId": "01M47CSD82VQW2F2HGJRYHTD7B",
+          "legacyStatus": null
+        },
+        "listMembership": true
+      },
+      "snapshotCount": 2,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 1,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 1,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249658.812653,
+        "afterTimestamp": 1791249660.04675
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249658.853607,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249658.8714821,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249658.881877,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 2,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 18,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249658.905778,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "ClientSubscription.TrackingConsentDrop"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249658.906156,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+        },
+        {
+          "event": "publisher.start",
+          "timestamp": 1791249658.906739,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "publisher.finish",
+          "timestamp": 1791249658.9209611,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249658.923958,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [
+        {
+          "event": "received",
+          "timestamp": 1791249658.927306,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null,
+          "group_id": "3yMCMn",
+          "open_tracking_consent": 0,
+          "click_tracking_consent": 0,
+          "subscription_type": [
+            1
+          ],
+          "subscribe_to_email": true,
+          "subscribe_to_sms": false,
+          "redelivery_count": 0,
+          "requeue_count": 0,
+          "publish_time": 1791249658,
+          "fault_mode": "off",
+          "message": {
+            "group_id": "3yMCMn",
+            "submitted_data": "{\"email\": \"[email]\", \"$source\": \"backend-consent-qa-live-control-1791249544-tracking-off-mixed\"}",
+            "subscribe_method": "API_ONSITE_V1_SUBSCRIPTIONS",
+            "subscribe_to_email": true,
+            "subscribe_to_sms": false,
+            "ip": "127.0.0.1",
+            "company_id": "WeAFEE",
+            "opt_in_type": "OPT_IN_TYPE_UNSPECIFIED",
+            "user_agent": "ConsentQA-ExplicitTransport/1.0",
+            "subscription_type": [
+              "SUBSCRIPTION_TYPE_EMAIL_MARKETING"
+            ],
+            "origin": {
+              "request_id": "a0f8ad2d-6191-442f-a917-9e44fd6f0f63"
+            }
+          }
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249658.954325,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "list_event.start",
+          "timestamp": 1791249659.30718,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "list_event.finish",
+          "timestamp": 1791249659.354781,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249661.5700312,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249661.570168,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249661.5702841,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "finished",
+          "timestamp": 1791249661.570434,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        }
+      ],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": true,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "publisher.start",
+        "publisher.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [
+        "received",
+        "subscribe.start",
+        "list_event.start",
+        "list_event.finish",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "finished"
+      ],
+      "metrics": [
+        "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+      ],
+      "logs": [
+        "ClientSubscription.TrackingConsentDrop"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249658.8714821,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249658.881877,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 2,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 18,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "sync-open-allow",
+      "recordedAt": "2026-10-06T01:22:06.349503+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": true
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47CVE32EBSF82AHYAHNFJP7",
+        "permissions": {
+          "open_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:22:06.173777+00:00",
+            "recordedDate": "2026-10-06 01:22:06.173777+00:00",
+            "customerId": "01M47CVE32EBSF82AHYAHNFJP7",
+            "subjectId": "01M47CVE32EBSF82AHYAHNFJP7"
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249725.2287512,
+        "afterTimestamp": 1791249726.316442
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249725.2698822,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249725.289095,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249725.3017118,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 11,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249725.341584,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249725.341969,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249725.3424482,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249725.352653,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249725.352899,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249726.240381,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249726.243156,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249725.289095,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249725.3017118,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 11,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "sync-click-deny",
+      "recordedAt": "2026-10-06T01:22:06.714796+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null
+          },
+          "click_tracking": {
+            "outcome": false
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47CVF2Z8FR9316YFPSSTDNT",
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": false,
+            "timestamp": "2026-10-06 01:22:06.594198+00:00",
+            "recordedDate": "2026-10-06 01:22:06.594198+00:00",
+            "customerId": "01M47CVF2Z8FR9316YFPSSTDNT",
+            "subjectId": "01M47CVF2Z8FR9316YFPSSTDNT"
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249726.4261172,
+        "afterTimestamp": 1791249726.681345
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249726.466235,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.484004,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.4963899,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 2,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 10,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249726.520381,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249726.52083,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249726.521406,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249726.522583,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249726.522712,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249726.6104372,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249726.612745,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.484004,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.4963899,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 2,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 10,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "sync-mixed",
+      "recordedAt": "2026-10-06T01:22:07.435629+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": true
+          },
+          "click_tracking": {
+            "outcome": false
+          }
+        },
+        "marketingConsent": {
+          "outcome": true
+        },
+        "listMembership": true
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47CVFJQSKSJPFWNNBX62APV",
+        "permissions": {
+          "open_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:22:07.285035+00:00",
+            "recordedDate": "2026-10-06 01:22:07.285035+00:00",
+            "customerId": "01M47CVFJQSKSJPFWNNBX62APV",
+            "subjectId": "01M47CVFJQSKSJPFWNNBX62APV"
+          },
+          "click_tracking": {
+            "outcome": false,
+            "timestamp": "2026-10-06 01:22:07.317196+00:00",
+            "recordedDate": "2026-10-06 01:22:07.317196+00:00",
+            "customerId": "01M47CVFJQSKSJPFWNNBX62APV",
+            "subjectId": "01M47CVFJQSKSJPFWNNBX62APV"
+          }
+        },
+        "marketingConsent": {
+          "outcome": true,
+          "timestamp": "2026-10-06 01:22:07.122320+00:00",
+          "recordedDate": "2026-10-06 01:22:07.122320+00:00",
+          "customerId": "01M47CVFJQSKSJPFWNNBX62APV",
+          "subjectId": "01M47CVFJQSKSJPFWNNBX62APV",
+          "legacyStatus": null
+        },
+        "listMembership": true
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249726.791372,
+        "afterTimestamp": 1791249727.405588
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249726.824807,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.843621,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 2,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.854971,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 3,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 10,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249726.879328,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249726.87968,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249726.880228,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249727.266189,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249727.266463,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249727.3325162,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249727.334686,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.843621,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 2,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249726.854971,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 3,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 10,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "protection-subscribed",
+      "recordedAt": "2026-10-06T01:22:07.873512+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "protection_block",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": true
+          },
+          "click_tracking": {
+            "outcome": true
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47CVG5WDMC7SGFDKK7GEHMP",
+        "permissions": {
+          "open_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:22:07.712674+00:00",
+            "recordedDate": "2026-10-06 01:22:07.712674+00:00",
+            "customerId": "01M47CVG5WDMC7SGFDKK7GEHMP",
+            "subjectId": "01M47CVG5WDMC7SGFDKK7GEHMP"
+          },
+          "click_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:22:07.753644+00:00",
+            "recordedDate": "2026-10-06 01:22:07.753644+00:00",
+            "customerId": "01M47CVG5WDMC7SGFDKK7GEHMP",
+            "subjectId": "01M47CVG5WDMC7SGFDKK7GEHMP"
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249727.512604,
+        "afterTimestamp": 1791249727.844299
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249727.551126,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249727.568845,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249727.580409,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 4,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 9,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249727.604471,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249727.604817,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249727.605366,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "fault.protection_block",
+          "timestamp": 1791249727.656461,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "injected": true
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249727.659112,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249727.6593568,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249727.7684329,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249727.770753,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "fault.protection_block",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249727.568845,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249727.580409,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 4,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 9,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "protection-unsubscribed",
+      "recordedAt": "2026-10-06T01:22:08.300188+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "protection_block",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": false
+          },
+          "click_tracking": {
+            "outcome": false
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47CVGKJAJ30MZ8018CVEFZR",
+        "permissions": {
+          "open_tracking": {
+            "outcome": false,
+            "timestamp": "2026-10-06 01:22:08.145885+00:00",
+            "recordedDate": "2026-10-06 01:22:08.145885+00:00",
+            "customerId": "01M47CVGKJAJ30MZ8018CVEFZR",
+            "subjectId": "01M47CVGKJAJ30MZ8018CVEFZR"
+          },
+          "click_tracking": {
+            "outcome": false,
+            "timestamp": "2026-10-06 01:22:08.179871+00:00",
+            "recordedDate": "2026-10-06 01:22:08.179871+00:00",
+            "customerId": "01M47CVGKJAJ30MZ8018CVEFZR",
+            "subjectId": "01M47CVGKJAJ30MZ8018CVEFZR"
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249727.952296,
+        "afterTimestamp": 1791249728.268609
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249727.992857,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249728.010779,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249728.0223958,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 5,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 8,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249728.047693,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249728.04806,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249728.048609,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "fault.protection_block",
+          "timestamp": 1791249728.0949771,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "injected": true
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249728.097808,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249728.0979688,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249728.194792,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249728.1973581,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "fault.protection_block",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249728.010779,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249728.0223958,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "protection_block",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 5,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 8,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "sync-tracking-off",
+      "recordedAt": "2026-10-06T01:23:16.721544+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": false,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 2,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249793.47839,
+        "afterTimestamp": 1791249796.686303
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249793.523551,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249793.542619,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249793.555999,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 3,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249793.58674,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "ClientSubscription.TrackingConsentDrop"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249793.58705,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249793.5914361,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249793.591687,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249793.592139,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249793.5944698,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249793.594607,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249793.594729,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249793.596894,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.client_subscription_tracking_consent_drop_rollout_disabled",
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "ClientSubscription.TrackingConsentDrop",
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249793.542619,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249793.555999,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 3,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "sync-disabled-drop",
+      "recordedAt": "2026-10-06T01:24:25.103737+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": false,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 2,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249861.869986,
+        "afterTimestamp": 1791249865.0717819
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249861.9214022,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249861.9414458,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249861.9535072,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 55,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249861.9875462,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "DropSyncSubscription"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249861.99022,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [],
+      "logs": [
+        "DropSyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249861.9414458,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249861.9535072,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 55,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "publisher-failure",
+      "recordedAt": "2026-10-06T01:25:30.778890+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "publisher_failure",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": true
+          },
+          "click_tracking": {
+            "outcome": false
+          }
+        },
+        "marketingConsent": {
+          "outcome": true
+        },
+        "listMembership": true
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47D1P6D2P5M85WKTXSQQTS5",
+        "permissions": {
+          "open_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:25:30.631234+00:00",
+            "recordedDate": "2026-10-06 01:25:30.631234+00:00",
+            "customerId": "01M47D1P6D2P5M85WKTXSQQTS5",
+            "subjectId": "01M47D1P6D2P5M85WKTXSQQTS5"
+          },
+          "click_tracking": {
+            "outcome": false,
+            "timestamp": "2026-10-06 01:25:30.663494+00:00",
+            "recordedDate": "2026-10-06 01:25:30.663494+00:00",
+            "customerId": "01M47D1P6D2P5M85WKTXSQQTS5",
+            "subjectId": "01M47D1P6D2P5M85WKTXSQQTS5"
+          }
+        },
+        "marketingConsent": {
+          "outcome": true,
+          "timestamp": "2026-10-06 01:25:30.503924+00:00",
+          "recordedDate": "2026-10-06 01:25:30.503924+00:00",
+          "customerId": "01M47D1P6D2P5M85WKTXSQQTS5",
+          "subjectId": "01M47D1P6D2P5M85WKTXSQQTS5",
+          "legacyStatus": null
+        },
+        "listMembership": true
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249930.234784,
+        "afterTimestamp": 1791249930.75195
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249930.275176,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.294831,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.30944,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "fault.publisher",
+          "timestamp": 1791249930.3416882,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "injected": true
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791249930.3445811,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "SyncSubscription"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791249930.344876,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.subscribe.sync"
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249930.345396,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249930.608555,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249930.6089652,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249930.675155,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249930.679449,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "fault.publisher",
+        "logger",
+        "metric",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.subscribe.sync"
+      ],
+      "logs": [
+        "SyncSubscription"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.294831,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.30944,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "publisher_failure",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "rate-1",
+      "recordedAt": "2026-10-06T01:25:33.130849+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "rate_limit",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": true
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47D1PS8N0623T769WMRZDZY",
+        "permissions": {
+          "open_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:25:32.699269+00:00",
+            "recordedDate": "2026-10-06 01:25:32.699269+00:00",
+            "customerId": "01M47D1PS8N0623T769WMRZDZY",
+            "subjectId": "01M47D1PS8N0623T769WMRZDZY"
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 3,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 2,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 2,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249930.865472,
+        "afterTimestamp": 1791249933.096719
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249930.8994508,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.906688,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 2,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.9082692,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 100,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "publisher.start",
+          "timestamp": 1791249930.9329731,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "publisher.finish",
+          "timestamp": 1791249930.936954,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249930.93932,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [
+        {
+          "event": "received",
+          "timestamp": 1791249930.952422,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null,
+          "group_id": "3yMCMn",
+          "open_tracking_consent": 1,
+          "click_tracking_consent": 0,
+          "subscription_type": [],
+          "subscribe_to_email": false,
+          "subscribe_to_sms": false,
+          "redelivery_count": 0,
+          "requeue_count": 0,
+          "publish_time": 1791249930,
+          "fault_mode": "off",
+          "message": {
+            "group_id": "3yMCMn",
+            "submitted_data": "{\"email\": \"[email]\", \"$source\": \"backend-consent-qa-live-control-1791249544-rate-1\"}",
+            "subscribe_method": "API_ONSITE_V1_SUBSCRIPTIONS",
+            "subscribe_to_email": false,
+            "subscribe_to_sms": false,
+            "ip": "127.0.0.1",
+            "company_id": "WeAFEE",
+            "opt_in_type": "OPT_IN_TYPE_UNSPECIFIED",
+            "user_agent": "ConsentQA-ExplicitTransport/1.0",
+            "origin": {
+              "request_id": "1924f578-2e90-40ba-ba26-b8257e3647ba"
+            },
+            "open_tracking_consent": "TRACKING_CONSENT_OPERATION_ALLOW"
+          }
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249930.980454,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249930.992376,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249930.9924748,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249932.754472,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "finished",
+          "timestamp": 1791249932.754675,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        }
+      ],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": true,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "publisher.start",
+        "publisher.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [
+        "received",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "finished"
+      ],
+      "metrics": [],
+      "logs": [],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.906688,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 2,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.9082692,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 100,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "rate-2",
+      "recordedAt": "2026-10-06T01:25:33.243266+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "rate_limit",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": true,
+        "permissions": {
+          "open_tracking": {
+            "outcome": true
+          },
+          "click_tracking": {
+            "outcome": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": true,
+        "profileId": "01M47D1RGXRF07XK6EW47YJDXC",
+        "permissions": {
+          "open_tracking": {
+            "outcome": true,
+            "timestamp": "2026-10-06 01:25:32.915672+00:00",
+            "recordedDate": "2026-10-06 01:25:32.915672+00:00",
+            "customerId": "01M47D1RGXRF07XK6EW47YJDXC",
+            "subjectId": "01M47D1RGXRF07XK6EW47YJDXC"
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 1,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 2,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 2,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249930.865472,
+        "afterTimestamp": 1791249933.21262
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249930.9492009,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.9559848,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 2,
+          "limit": 2,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.956567,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 2,
+          "limit": 100,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "publisher.start",
+          "timestamp": 1791249930.981903,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "publisher.finish",
+          "timestamp": 1791249930.986235,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249930.98841,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [
+        {
+          "event": "received",
+          "timestamp": 1791249932.761857,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null,
+          "group_id": "3yMCMn",
+          "open_tracking_consent": 1,
+          "click_tracking_consent": 0,
+          "subscription_type": [],
+          "subscribe_to_email": false,
+          "subscribe_to_sms": false,
+          "redelivery_count": 0,
+          "requeue_count": 0,
+          "publish_time": 1791249930,
+          "fault_mode": "off",
+          "message": {
+            "group_id": "3yMCMn",
+            "submitted_data": "{\"email\": \"[email]\", \"$source\": \"backend-consent-qa-live-control-1791249544-rate-2\"}",
+            "subscribe_method": "API_ONSITE_V1_SUBSCRIPTIONS",
+            "subscribe_to_email": false,
+            "subscribe_to_sms": false,
+            "ip": "127.0.0.1",
+            "company_id": "WeAFEE",
+            "opt_in_type": "OPT_IN_TYPE_UNSPECIFIED",
+            "user_agent": "ConsentQA-ExplicitTransport/1.0",
+            "origin": {
+              "request_id": "0c090fdc-8b01-4968-bdee-86a681727f37"
+            },
+            "open_tracking_consent": "TRACKING_CONSENT_OPERATION_ALLOW"
+          }
+        },
+        {
+          "event": "subscribe.start",
+          "timestamp": 1791249932.7851489,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "subscribe.finish",
+          "timestamp": 1791249932.789417,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "tracking.start",
+          "timestamp": 1791249932.78954,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "tracking.finish",
+          "timestamp": 1791249932.936424,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        },
+        {
+          "event": "finished",
+          "timestamp": 1791249932.93664,
+          "pid": 38598,
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "phone_number": null
+        }
+      ],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": true,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "publisher.start",
+        "publisher.finish",
+        "http.finish"
+      ],
+      "consumerOrder": [
+        "received",
+        "subscribe.start",
+        "subscribe.finish",
+        "tracking.start",
+        "tracking.finish",
+        "finished"
+      ],
+      "metrics": [],
+      "logs": [],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.9559848,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 2,
+          "limit": 2,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249930.956567,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 2,
+          "limit": 100,
+          "window": 60,
+          "timeLeft": 46,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "rate-3",
+      "recordedAt": "2026-10-06T01:25:36.373408+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "rate_limit",
+      "httpStatus": 429,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": false,
+        "marketingConsent": {
+          "outcome": null
+        },
+        "listMembership": false
+      },
+      "before": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "after": {
+        "profileExists": false,
+        "profileId": null,
+        "permissions": {
+          "open_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          },
+          "click_tracking": {
+            "outcome": null,
+            "timestamp": null,
+            "recordedDate": null,
+            "customerId": null,
+            "subjectId": null
+          }
+        },
+        "marketingConsent": {
+          "outcome": null,
+          "timestamp": null,
+          "recordedDate": null,
+          "customerId": null,
+          "subjectId": null,
+          "legacyStatus": null
+        },
+        "listMembership": false
+      },
+      "snapshotCount": 2,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 2,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 2,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791249930.865472,
+        "afterTimestamp": 1791249936.340919
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791249930.997324,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249931.0033522,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": false,
+          "count": 3,
+          "limit": 2,
+          "window": 60,
+          "timeLeft": 45,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791249931.00751,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 429,
+          "retryAfter": "45"
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [],
+      "logs": [],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791249931.0033522,
+          "pid": 42243,
+          "runId": "local-control-1791249544",
+          "mode": "rate_limit",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": false,
+          "count": 3,
+          "limit": 2,
+          "window": 60,
+          "timeLeft": 45,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "scenario": "disallow-percentage100",
+      "recordedAt": "2026-10-06T01:27:31.669098+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "email": "[email]",
+      "controlMode": "observe",
+      "httpStatus": 202,
+      "httpExpectationMatched": true,
+      "stateExpectationMatched": true,
+      "expectedState": {
+        "profileExists": false,
+        "permissionRowCount": 0
+      },
+      "before": {
+        "profileExists": false,
+        "permissionRowCount": 0
+      },
+      "after": {
+        "profileExists": false,
+        "permissionRowCount": 0
+      },
+      "snapshotCount": 2,
+      "broker": {
+        "verified": true,
+        "publishedDelta": 0,
+        "partitionCount": 8,
+        "byPartition": {
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2": 0,
+          "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3": 0
+        },
+        "beforeTimestamp": 1791250048.355218,
+        "afterTimestamp": 1791250051.6209438
+      },
+      "events": [
+        {
+          "event": "http.start",
+          "timestamp": 1791250048.430742,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791250048.450845,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791250048.462987,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 48,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "logger",
+          "timestamp": 1791250048.501227,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "info",
+          "key": "ClientSubscription.TrackingConsentDrop"
+        },
+        {
+          "event": "metric",
+          "timestamp": 1791250048.501649,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "method": "incr",
+          "key": "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+        },
+        {
+          "event": "http.finish",
+          "timestamp": 1791250048.505495,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "status": 202,
+          "retryAfter": null
+        }
+      ],
+      "consumerEvents": [],
+      "consumerTraceCapturedAt": "2026-10-06T01:28:36.420356+00:00",
+      "consumerHandlerFinished": false,
+      "eventOrder": [
+        "http.start",
+        "limiter.result",
+        "limiter.result",
+        "logger",
+        "metric",
+        "http.finish"
+      ],
+      "consumerOrder": [],
+      "metrics": [
+        "forms.client_subscription_tracking_consent_drop_rollout_disabled"
+      ],
+      "logs": [
+        "ClientSubscription.TrackingConsentDrop"
+      ],
+      "limiterResults": [
+        {
+          "event": "limiter.result",
+          "timestamp": 1791250048.450845,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-burst",
+          "passing": true,
+          "count": 1,
+          "limit": 350,
+          "window": 1,
+          "timeLeft": 0,
+          "cacheAlias": "api_rate_limit_v3"
+        },
+        {
+          "event": "limiter.result",
+          "timestamp": 1791250048.462987,
+          "pid": 42243,
+          "runId": "control-rg03-1791249982",
+          "mode": "observe",
+          "company_id": "WeAFEE",
+          "email": "[email]",
+          "limiter": "onsite-steady",
+          "passing": true,
+          "count": 1,
+          "limit": 750,
+          "window": 60,
+          "timeLeft": 48,
+          "cacheAlias": "api_rate_limit_v3"
+        }
+      ],
+      "assertions": [
+        {
+          "label": "HTTP status matched",
+          "passed": true
+        },
+        {
+          "label": "Expected persisted state observed",
+          "passed": true
+        },
+        {
+          "label": "Scoped real HTTP handler completed",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "permissionMetadata": {
+    "recordedAt": "2026-10-06T01:23:47.782920+00:00",
+    "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+    "readOnly": true,
+    "rows": [
+      {
+        "identifier": "[email]",
+        "action": 12,
+        "outcome": false,
+        "metadata": {
+          "type": "CLICK_TRACKING_CONSENT",
+          "ip_address": "127.0.0.1",
+          "subscribe_method": 3050,
+          "__schema_version__": 1
+        },
+        "customerId": "01M47CVF2Z8FR9316YFPSSTDNT",
+        "subjectId": "01M47CVF2Z8FR9316YFPSSTDNT"
+      },
+      {
+        "identifier": "[email]",
+        "action": 10,
+        "outcome": true,
+        "metadata": {
+          "type": "OPEN_TRACKING_CONSENT",
+          "ip_address": "127.0.0.1",
+          "subscribe_method": 3050,
+          "__schema_version__": 1
+        },
+        "customerId": "01M47CVFJQSKSJPFWNNBX62APV",
+        "subjectId": "01M47CVFJQSKSJPFWNNBX62APV"
+      },
+      {
+        "identifier": "[email]",
+        "action": 12,
+        "outcome": false,
+        "metadata": {
+          "type": "CLICK_TRACKING_CONSENT",
+          "ip_address": "127.0.0.1",
+          "subscribe_method": 3050,
+          "__schema_version__": 1
+        },
+        "customerId": "01M47CVFJQSKSJPFWNNBX62APV",
+        "subjectId": "01M47CVFJQSKSJPFWNNBX62APV"
+      },
+      {
+        "identifier": "[email]",
+        "action": 10,
+        "outcome": true,
+        "metadata": {
+          "type": "OPEN_TRACKING_CONSENT",
+          "ip_address": "127.0.0.1",
+          "subscribe_method": 3050,
+          "__schema_version__": 1
+        },
+        "customerId": "01M47CVE32EBSF82AHYAHNFJP7",
+        "subjectId": "01M47CVE32EBSF82AHYAHNFJP7"
+      }
+    ]
+  },
+  "finalBrokerSnapshot": {
+    "timestamp": 1791250076.284875,
+    "topics": [
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-0",
+        "msgInCounter": 19,
+        "msgOutCounter": 20,
+        "subscriptions": {
+          "chariot_subscription-subscription-subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 20,
+            "lastAckedTimestamp": 1791248782257,
+            "consumers": 1
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-1",
+        "msgInCounter": 1,
+        "msgOutCounter": 1,
+        "subscriptions": {
+          "chariot_subscription-subscription-subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 1,
+            "lastAckedTimestamp": 0,
+            "consumers": 1
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-2",
+        "msgInCounter": 3,
+        "msgOutCounter": 3,
+        "subscriptions": {
+          "chariot_subscription-subscription-subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 3,
+            "lastAckedTimestamp": 1791249932945,
+            "consumers": 1
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--subscription/chariot_topic_subscription-partition-3",
+        "msgInCounter": 5,
+        "msgOutCounter": 5,
+        "subscriptions": {
+          "chariot_subscription-subscription-subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 5,
+            "lastAckedTimestamp": 1791249035049,
+            "consumers": 1
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-0",
+        "msgInCounter": 0,
+        "msgOutCounter": 0,
+        "subscriptions": {
+          "chariot_subscription-shopify_subscription-shopify_subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 0,
+            "lastAckedTimestamp": 0,
+            "consumers": 0
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-1",
+        "msgInCounter": 2,
+        "msgOutCounter": 0,
+        "subscriptions": {
+          "chariot_subscription-shopify_subscription-shopify_subscription": {
+            "msgBacklog": 2,
+            "unackedMessages": 0,
+            "msgOutCounter": 0,
+            "lastAckedTimestamp": 0,
+            "consumers": 0
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-2",
+        "msgInCounter": 0,
+        "msgOutCounter": 0,
+        "subscriptions": {
+          "chariot_subscription-shopify_subscription-shopify_subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 0,
+            "lastAckedTimestamp": 0,
+            "consumers": 0
+          }
+        }
+      },
+      {
+        "topic": "persistent://chariot1/chariot_ns_subscriptions--shopify_subscription/chariot_topic_shopify_subscription-partition-3",
+        "msgInCounter": 0,
+        "msgOutCounter": 0,
+        "subscriptions": {
+          "chariot_subscription-shopify_subscription-shopify_subscription": {
+            "msgBacklog": 0,
+            "unackedMessages": 0,
+            "msgOutCounter": 0,
+            "lastAckedTimestamp": 0,
+            "consumers": 0
+          }
+        }
+      }
+    ]
+  },
+  "runnerErrors": [],
+  "scope": "Actual local HTTP + local DB + broker evidence. Injected publisher/protection/limit boundaries explicitly identified; no remote dashboard evidence."
+}

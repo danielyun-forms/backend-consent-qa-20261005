@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-05",
+  "sourceSheet": "https://docs.google.com/spreadsheets/d/1Sm1uGCZF1pEYF7u7Ik7IcX7BkguBqVryOzUrfO1kDjY/edit?gid=1366944195#gid=1366944195",
+  "repositories": {
+    "app": {
+      "sha": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "ref": "origin/master",
+      "subject": "CAD-1027: Remove from Lists mapping for DWH Import (#149907)"
+    },
+    "fender": {
+      "sha": "5c174384ca8ade15c3e5b3b4e6b25cb7df55ca63",
+      "ref": "origin/master",
+      "subject": "Make the SMS and RCS campaign previews look like the messaging apps (#72087)"
+    },
+    "k-repo": {
+      "sha": "cbb7617458f5a345a733e99a30ffe88b0257de81",
+      "ref": "origin/main",
+      "subject": "feat(applications): KRepoLayout and the k-repo scaffold binary over the shipped CLI (#75631)"
+    }
+  },
+  "scope": "Real localhost HTTP and broker/consumer delivery with synthetic profiles. Controlled fault probes reported separately. No hosted account subscription calls.",
+  "checklistCases": 64,
+  "sourceCheckoutsCleanAfterTests": true,
+  "environmentRecovery": "Started existing local services and removed only a verified stale MySQL socket and lock. No database schema migrations or resets performed.",
+  "sourceUpdateStrategy": "Fetched upstream default branches, then used isolated detached worktrees to preserve active branches and local edits.",
+  "runId": "local-real-api-20261005",
+  "startedAt": "2026-10-06T00:44:20.970804+00:00",
+  "target": "Local app + local queue/consumer",
+  "baseline": "https://danielyun-forms.github.io/backend-consent-qa-20261005/report.html",
+  "completedAt": "2026-10-06T01:28:36.420356+00:00",
+  "timezone": "America/New_York",
+  "executionWindow": "October 5, 2026 local time; UTC timestamps extend into October 6.",
+  "finalEnvironment": "Scoped controls disabled and original settings restored. All four regular Subscription partitions have zero backlog/unacked messages. Separate pre-existing Shopify backlog of two messages is unchanged; no Shopify consumer was run."
+}

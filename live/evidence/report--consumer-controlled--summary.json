@@ -1,0 +1,564 @@
+{
+  "runId": "local-real-api-20261005",
+  "generatedAt": "2026-10-06T01:04:57.803366+00:00",
+  "scope": "Fresh controlled execution only; includes repeated inherited methods, so run counts are executions, not unique tests.",
+  "runs": {
+    "unit-existing": {
+      "reportedWarningCount": 54,
+      "warningDetails": "Suppressed by existing --disable-warnings; no additional rerun performed just to repeat completed tests.",
+      "startedAt": "2026-10-06T00:52:26.716388+00:00",
+      "completedAt": "2026-10-06T00:53:22.962589+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "exitCode": 0,
+      "testCount": 27,
+      "tests": [
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_legacy_message_without_channels_still_subscribes",
+          "name": "test_legacy_message_without_channels_still_subscribes",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_only_allow_is_applied_as_permissions",
+          "name": "test_tracking_only_allow_is_applied_as_permissions",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_decline_everything_submission_keeps_its_profile_data",
+          "name": "test_decline_everything_submission_keeps_its_profile_data",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_click_only_decision_sends_no_open_tracking_request_0_click_allow",
+          "name": "test_click_only_decision_sends_no_open_tracking_request_0_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "name": "test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "name": "test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_decision_without_email_is_observable",
+          "name": "test_tracking_decision_without_email_is_observable",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_closed_company_still_subscribes_but_writes_no_tracking",
+          "name": "test_closed_company_still_subscribes_but_writes_no_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_retryable_tracking_failure_uses_existing_retry_path",
+          "name": "test_retryable_tracking_failure_uses_existing_retry_path",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "name": "test_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_apply.TestApplyTrackingConsentRequests::test_sends_every_request_in_one_batch",
+          "name": "test_sends_every_request_in_one_batch",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_apply.TestApplyTrackingConsentRequests::test_skips_the_service_when_there_are_no_requests",
+          "name": "test_skips_the_service_when_there_are_no_requests",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_apply.TestApplyTrackingConsentRequests::test_drops_requests_for_a_closed_company",
+          "name": "test_drops_requests_for_a_closed_company",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_get_display_name_and_sample_data_includes_open_tracking",
+          "name": "test_get_display_name_and_sample_data_includes_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+          "name": "test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_build_export_properties",
+          "name": "test_build_export_properties",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+          "name": "test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_export_keys_match_file_ingest_consent_properties",
+          "name": "test_export_keys_match_file_ingest_consent_properties",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[open_allow_click_deny]",
+          "name": "test_builds_requests_carrying_the_operation_and_profile_info[open_allow_click_deny]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[deny_both]",
+          "name": "test_builds_requests_carrying_the_operation_and_profile_info[deny_both]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[click_only_allow]",
+          "name": "test_builds_requests_carrying_the_operation_and_profile_info[click_only_allow]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[no_decisions]",
+          "name": "test_builds_requests_carrying_the_operation_and_profile_info[no_decisions]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_profile_info_is_copied_onto_each_request",
+          "name": "test_profile_info_is_copied_onto_each_request",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_rejects_an_unsupported_permission_operation",
+          "name": "test_rejects_an_unsupported_permission_operation",
+          "status": "pass"
+        }
+      ]
+    },
+    "unit-probes": {
+      "reportedWarningCount": 3,
+      "warningDetails": "Suppressed by existing --disable-warnings; no additional rerun performed just to repeat completed tests.",
+      "startedAt": "2026-10-06T00:53:37.725686+00:00",
+      "completedAt": "2026-10-06T00:54:27.009799+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "exitCode": 0,
+      "testCount": 18,
+      "tests": [
+        {
+          "id": ".TestConsumerWorksheetCases::test_legacy_message_without_channels_still_subscribes",
+          "name": "test_legacy_message_without_channels_still_subscribes",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_tracking_only_allow_is_applied_as_permissions",
+          "name": "test_tracking_only_allow_is_applied_as_permissions",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_decline_everything_submission_keeps_its_profile_data",
+          "name": "test_decline_everything_submission_keeps_its_profile_data",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_click_only_decision_sends_no_open_tracking_request_0_click_allow",
+          "name": "test_click_only_decision_sends_no_open_tracking_request_0_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "name": "test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "name": "test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_tracking_decision_without_email_is_observable",
+          "name": "test_tracking_decision_without_email_is_observable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_closed_company_still_subscribes_but_writes_no_tracking",
+          "name": "test_closed_company_still_subscribes_but_writes_no_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_retryable_tracking_failure_uses_existing_retry_path",
+          "name": "test_retryable_tracking_failure_uses_existing_retry_path",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "name": "test_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_no_permission_exports_implicit_subscribed_without_timestamps",
+          "name": "test_no_permission_exports_implicit_subscribed_without_timestamps",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_company_mismatch_skips_both_services",
+          "name": "test_company_mismatch_skips_both_services",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_nonretryable_permission_error_propagates",
+          "name": "test_nonretryable_permission_error_propagates",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_retryable_permission_error_rejects_message_and_counts_error",
+          "name": "test_retryable_permission_error_rejects_message_and_counts_error",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_replayed_mixed_message_repeats_subscribe_before_permissions",
+          "name": "test_replayed_mixed_message_repeats_subscribe_before_permissions",
+          "status": "pass"
+        }
+      ]
+    },
+    "integration": {
+      "reportedWarningCount": 126,
+      "warningDetails": "Suppressed by existing --disable-warnings; no additional rerun performed just to repeat completed tests.",
+      "startedAt": "2026-10-06T01:00:25.920743+00:00",
+      "completedAt": "2026-10-06T01:02:07.488547+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "exitCode": 0,
+      "testCount": 55,
+      "tests": [
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "name": "test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_emits_consent_granted_event_with_metadata",
+          "name": "test_allow_emits_consent_granted_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_grants_open_tracking_consent",
+          "name": "test_allow_grants_open_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_invalid_email_exits_without_writing_permission",
+          "name": "test_allow_invalid_email_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "name": "test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_no_ingest_access_exits_without_writing_permission",
+          "name": "test_allow_no_ingest_access_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "name": "test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "name": "test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_emits_consent_revoked_event_with_metadata",
+          "name": "test_deny_emits_consent_revoked_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "name": "test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_revokes_open_tracking_consent",
+          "name": "test_deny_revokes_open_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_no_record_is_implicitly_unreachable",
+          "name": "test_no_record_is_implicitly_unreachable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "name": "test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_emits_consent_granted_event_with_metadata",
+          "name": "test_allow_emits_consent_granted_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_grants_click_tracking_consent",
+          "name": "test_allow_grants_click_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_invalid_email_exits_without_writing_permission",
+          "name": "test_allow_invalid_email_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "name": "test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_no_ingest_access_exits_without_writing_permission",
+          "name": "test_allow_no_ingest_access_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "name": "test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "name": "test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_emits_consent_revoked_event_with_metadata",
+          "name": "test_deny_emits_consent_revoked_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "name": "test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_revokes_click_tracking_consent",
+          "name": "test_deny_revokes_click_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_no_record_is_implicitly_unreachable",
+          "name": "test_no_record_is_implicitly_unreachable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_does_process_a_retry",
+          "name": "test_does_process_a_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_doesnt_process_old_messages",
+          "name": "test_doesnt_process_old_messages",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_invalid_on_message_batch",
+          "name": "test_invalid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_no_channels_included",
+          "name": "test_no_channels_included",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_with_form_data_0",
+          "name": "test_only_whatsapp_channels_with_form_data_0",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_with_form_data_1",
+          "name": "test_only_whatsapp_channels_with_form_data_1",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_without_form_data_0",
+          "name": "test_only_whatsapp_channels_without_form_data_0",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_without_form_data_1",
+          "name": "test_only_whatsapp_channels_without_form_data_1",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_channels",
+          "name": "test_pass_in_channels",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_channels",
+          "name": "test_pass_in_just_marketing_channels",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_email_channel",
+          "name": "test_pass_in_just_marketing_email_channel",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_transactional_channels",
+          "name": "test_pass_in_just_transactional_channels",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_and_transactional_with_invalid_sms_consent_method",
+          "name": "test_sms_marketing_and_transactional_with_invalid_sms_consent_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_and_transactional_with_social_instagram_message_method",
+          "name": "test_sms_marketing_and_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_with_social_instagram_message_method",
+          "name": "test_sms_marketing_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_transactional_with_social_instagram_message_method",
+          "name": "test_sms_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_valid_on_message_batch",
+          "name": "test_valid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_marketing_and_transactional_with_social_instagram_message_method",
+          "name": "test_whatsapp_marketing_and_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_transactional_with_social_instagram_message_method",
+          "name": "test_whatsapp_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_with_form_data_with_extra_channels_0",
+          "name": "test_whatsapp_with_form_data_with_extra_channels_0",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_with_form_data_with_extra_channels_1",
+          "name": "test_whatsapp_with_form_data_with_extra_channels_1",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_does_process_a_retry",
+          "name": "test_does_process_a_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_doesnt_process_old_messages",
+          "name": "test_doesnt_process_old_messages",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_invalid_accesstoken_on_message_batch",
+          "name": "test_invalid_accesstoken_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_invalid_on_message_batch",
+          "name": "test_invalid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_rate_limited_on_message_batch",
+          "name": "test_rate_limited_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_valid_on_message_batch",
+          "name": "test_valid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+          "name": "test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+          "name": "test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry",
+          "name": "test_failed_workflow_error_is_reported_without_message_retry",
+          "status": "pass"
+        }
+      ]
+    },
+    "pair": {
+      "reportedWarningCount": 40,
+      "warningDetails": "Suppressed by existing --disable-warnings; no additional rerun performed just to repeat completed tests.",
+      "startedAt": "2026-10-06T01:02:13.060369+00:00",
+      "completedAt": "2026-10-06T01:03:17.842584+00:00",
+      "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "exitCode": 0,
+      "testCount": 1,
+      "tests": [
+        {
+          "id": ".TestConsumerPermissionSequence::test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event",
+          "name": "test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event",
+          "status": "pass"
+        }
+      ]
+    }
+  },
+  "executionCount": 101,
+  "setupRecovery": {
+    "reason": "The first copied integration attempt omitted the final external-fixture conftest. Exact prior isolation boundaries were restored before the successful fresh rerun. No product code was changed.",
+    "initialTestCount": 55,
+    "initialFailures": 2,
+    "initialErrors": 27,
+    "includedInFinalExecutionCount": false
+  }
+}

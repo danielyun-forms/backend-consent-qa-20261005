@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-06T00:45:35.219269+00:00",
+  "kRepoSha": "cbb7617458f5a345a733e99a30ffe88b0257de81",
+  "protobufVersion": "6.33.6",
+  "scope": "Generated schema and local serialization only; no KMS producer, transport, consumer or database.",
+  "results": [
+    {
+      "name": "optional_enum_schema",
+      "status": "pass",
+      "detail": {
+        "open_tracking_consent": {
+          "number": 14,
+          "has_presence": true,
+          "default": 0,
+          "enum": "TrackingConsentOperation"
+        },
+        "click_tracking_consent": {
+          "number": 15,
+          "has_presence": true,
+          "default": 0,
+          "enum": "TrackingConsentOperation"
+        }
+      }
+    },
+    {
+      "name": "allow_deny_roundtrip",
+      "status": "pass",
+      "detail": {
+        "open": 1,
+        "click": 2
+      }
+    },
+    {
+      "name": "omitted_decision_presence",
+      "status": "pass",
+      "detail": {
+        "openPresent": false,
+        "clickPresent": false,
+        "default": 0
+      }
+    },
+    {
+      "name": "tracking_only_roundtrip",
+      "status": "pass",
+      "detail": {
+        "email": false,
+        "sms": false,
+        "subscriptionTypes": [],
+        "click": 2
+      }
+    },
+    {
+      "name": "invalid_enum_values",
+      "status": "pass",
+      "detail": {
+        "rejected": [
+          99,
+          "MARKETING",
+          "TRACKING",
+          "COMBINED"
+        ],
+        "note": "Schema rejection only; adapter operation validation is tested separately."
+      }
+    }
+  ],
+  "runId": "local-real-api-20261005"
+}

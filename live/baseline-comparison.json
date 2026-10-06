@@ -1,0 +1,336 @@
+{
+  "baseline": {
+    "generatedAt": "2026-10-06T00:36:27.295639+00:00",
+    "counts": {
+      "pass": 34,
+      "partial": 11,
+      "fail": 3,
+      "changed": 15,
+      "blocked": 1
+    },
+    "url": "../report.html",
+    "scope": "Prior controlled run, comparison only. No baseline verdict supplies current evidence."
+  },
+  "cases": [
+    {
+      "id": "AC-01",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-02",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-03",
+      "baselineStatus": "partial",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-04",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-05",
+      "baselineStatus": "fail",
+      "currentStatus": "fail"
+    },
+    {
+      "id": "AC-06",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-07",
+      "baselineStatus": "partial",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-08",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-09",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "AC-10",
+      "baselineStatus": "partial",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "SY-01",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "SY-02",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "SY-03",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "SY-04",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "SY-05",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "SY-06",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "SY-07",
+      "baselineStatus": "partial",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "SY-08",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "SY-09",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "KP-01",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KP-02",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KP-03",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KP-04",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KP-05",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KP-06",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KP-07",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "SH-01",
+      "baselineStatus": "pass",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "SH-02",
+      "baselineStatus": "pass",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "SH-03",
+      "baselineStatus": "pass",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "SH-04",
+      "baselineStatus": "partial",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "KC-01",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KC-02",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "KC-03",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "KC-04",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "KC-05",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KC-06",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KC-07",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KC-08",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "KC-09",
+      "baselineStatus": "pass",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "RG-01",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "RG-02",
+      "baselineStatus": "changed",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "RG-03",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "RG-04",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "RG-05",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "PR-01",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "PR-02",
+      "baselineStatus": "pass",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "PR-03",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "PR-04",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "PR-05",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "PR-06",
+      "baselineStatus": "partial",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "FM-01",
+      "baselineStatus": "fail",
+      "currentStatus": "fail"
+    },
+    {
+      "id": "FM-02",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "FM-03",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "FM-04",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "FM-05",
+      "baselineStatus": "partial",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "FM-06",
+      "baselineStatus": "pass",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "FM-07",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "SE-01",
+      "baselineStatus": "changed",
+      "currentStatus": "changed"
+    },
+    {
+      "id": "SE-02",
+      "baselineStatus": "partial",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "SE-03",
+      "baselineStatus": "partial",
+      "currentStatus": "pass"
+    },
+    {
+      "id": "OB-01",
+      "baselineStatus": "partial",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "OB-02",
+      "baselineStatus": "fail",
+      "currentStatus": "fail"
+    },
+    {
+      "id": "OB-03",
+      "baselineStatus": "partial",
+      "currentStatus": "partial"
+    },
+    {
+      "id": "OB-04",
+      "baselineStatus": "blocked",
+      "currentStatus": "partial"
+    }
+  ]
+}

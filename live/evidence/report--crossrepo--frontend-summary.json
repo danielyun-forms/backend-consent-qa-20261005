@@ -1,0 +1,704 @@
+{
+  "runId": "local-real-api-20261005",
+  "sourceSha": "5c174384ca8ade15c3e5b3b4e6b25cb7df55ca63",
+  "startedAt": "2026-10-06T00:45:33.995265+00:00",
+  "completedAt": "2026-10-06T00:45:45.548758+00:00",
+  "cachePolicy": "--cache=local:w,remote:w; tool log confirms cache bypass and fresh execution",
+  "jestStartTime": 1791247541389,
+  "numPassedTestSuites": 4,
+  "numTotalTests": 166,
+  "numPassedTests": 166,
+  "numFailedTests": 0,
+  "consoleWarnings": [],
+  "scope": "Fresh controlled Jest execution; outgoing request wrapper mocked. No HTTP/queue/DB persistence in these suites.",
+  "suites": [
+    {
+      "file": "client/onsite/onsite-forms/src/Client/Components/FormComponents/MarketingTrackingConsentCheckbox/marketingTrackingConsent.test.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "getActiveConsentContent compiles two separate choices with open-tracking copy",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent compiles the same two choices with all-email-tracking copy",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent compiles a single combined choice",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent returns undefined for no configuration at all",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent returns undefined for an unknown model arriving from the API",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent returns undefined for a missing active entry",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent returns undefined for an empty required label",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent returns undefined for a whitespace-only disclosure",
+          "status": "passed"
+        },
+        {
+          "name": "getActiveConsentContent returns undefined for a whitespace-only combined label",
+          "status": "passed"
+        },
+        {
+          "name": "getValidSelectedChoices keeps descriptor order and drops duplicates and unknown tokens",
+          "status": "passed"
+        },
+        {
+          "name": "getValidSelectedChoices drops tokens that do not apply to the active model",
+          "status": "passed"
+        },
+        {
+          "name": "getValidSelectedChoices treats non-array values as no selection",
+          "status": "passed"
+        },
+        {
+          "name": "getValidSelectedChoices accepts a valid combined selection",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S2 for MARKETING_AND_OPEN_TRACKING with choices [\"MARKETING\",\"TRACKING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S3 for MARKETING_AND_OPEN_TRACKING with choices [\"MARKETING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S5 for MARKETING_AND_OPEN_TRACKING with choices [\"TRACKING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S7 for MARKETING_AND_OPEN_TRACKING with choices []",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S1 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"MARKETING\",\"TRACKING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S4 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"MARKETING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S6 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"TRACKING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S8 for MARKETING_AND_ALL_EMAIL_TRACKING with choices []",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S2 for OPEN_TRACKING_COMBINED_CONSENT with choices [\"COMBINED\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S7 for OPEN_TRACKING_COMBINED_CONSENT with choices []",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S1 for ALL_TRACKING_COMBINED_CONSENT with choices [\"COMBINED\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S8 for ALL_TRACKING_COMBINED_CONSENT with choices []",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S8 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"COMBINED\"]",
+          "status": "passed"
+        },
+        {
+          "name": "buildMarketingTrackingConsentSubscriptions writes shape S7 for OPEN_TRACKING_COMBINED_CONSENT with choices [\"MARKETING\",\"TRACKING\"]",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection returns undefined when the form has no consent block",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection returns undefined when the value is never recorded",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection returns undefined when the value is seeded by a view transition",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection returns undefined when the value is not an array",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection returns undefined when the configuration does not compile",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection defaults to the current device (mobile) for a mobile-only block",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection defaults to the current device (desktop) for a mobile-only block",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection returns an empty selection for a live block with nothing checked",
+          "status": "passed"
+        },
+        {
+          "name": "getMarketingTrackingConsentSelection drops tokens the selected model does not present",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "client/onsite/onsite-forms/src/ClientStore/tests/selectors/openFormVersions.test.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Test openFormVersion selectors getOpenFormVersionComponentsForDevice",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getValidationMetadataForDevice smsConsentType does not return smsConsentType if it is not a phone number component",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getValidationMetadataForDevice smsConsentType returns undefined smsConsentType if it is a legacy phone only component",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getValidationMetadataForDevice smsConsentType returns undefined smsConsentType if it is a phone only component",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getValidationMetadataForDevice smsConsentType returns the legacy smsConsentType",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getValidationMetadataForDevice smsConsentType returns the smsConsentType",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getSubscriptionOnlyComponentDataForDevice sms_consent does not include sms_consent for legacy phone number only",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getSubscriptionOnlyComponentDataForDevice sms_consent includes sms_consent for legacy smsConsentType",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors excludes checked and empty renderer-private consent choices from fields",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should only return component data if view meta fields are not defined",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should return component data from multiple components",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should return both component and view metadata",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should overwrite conflicting fieldIds with preference to components",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should add hidden fields",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should not add hidden fields",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should not add hidden fields for non submit action types",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should only add mobile fields on mobile",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getComposedFields should only add desktop fields on desktop",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors shouldTriggerSubmitMetricForDevice",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getTopModalCId",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors toStringOrList should do nothing to undefined",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors toStringOrList should do nothing to null",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors toStringOrList should do nothing to empty strings",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors toStringOrList should do nothing to normal strings",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors toStringOrList should not parse object strings",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors toStringOrList should parse list strings",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors shouldRequestOTPCodeForSubmit should return false if the form version does not have the correct configuration for OTP code",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors shouldRequestOTPCodeForSubmit should return true if the form version does not have the correct configuration for OTP code",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getSuccessStepName should return undefined if the form version id is not provided",
+          "status": "passed"
+        },
+        {
+          "name": "Test openFormVersion selectors getSuccessStepName should return the success step name",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "submitToList when submission is successful calls botProtectedSubmitToList with correct parameters",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when submission is successful sends Shop identity with email=[email] without phone consent or a customer access token",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when submission is successful sends Shop identity with email=null without phone consent or a customer access token",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when submission is successful subscribes the resolved phone to the consented Shop channels in the same request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when submission is successful caches the form post body",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when submission is successful sets created profile events when status is success",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when submission is successful updates session storage with form events",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing routes [\"sms\"] consent to the phone list and emits events only on the final request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing routes [\"whatsApp\"] consent to the phone list and emits events only on the final request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing routes [\"sms\", \"whatsApp\"] consent to the phone list and emits events only on the final request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing keeps a single request for phone list undefined",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing keeps a single request for phone list test-list-id",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing does not route to a different list without consent (undefined)",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing does not route to a different list without consent ([])",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing skips the primary request when the identity has no email",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing keeps email on the primary list when the identity has no phone",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing rejects a failed request 1 without recording completion",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing rejects a failed request 2 without recording completion",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing retries only challenged request 1 after captcha success",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing retries only challenged request 2 after captcha success",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing propagates a failed captcha retry on request 1 without recording completion",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList Shop phone list routing propagates a failed captcha retry on request 2 without recording completion",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile events creation when form has 2 views creates both formSubmitted and formCompleted events",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile events creation when form has 1 reachable view (terminal redirect/close submit action) creates both formSubmitted and formCompleted events (FORMS-33887)",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile events creation when form has more than 2 views and submitting from middle view creates only formSubmitted event",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile events creation when form has more than 2 views and submitting from last view creates both formSubmitted and formCompleted events",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile events creation when form has already been submitted does not create formSubmitted event",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile events creation when form has already been completed in session storage does not create formCompleted event",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList multi-step identifier carry-over for profile events (FORMS-33821) carries the previously-submitted email into the Form Completed event when the current step only has a phone number",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList multi-step identifier carry-over for profile events (FORMS-33821) carries the previously-submitted email into the Form Submitted event when the current step only has a phone number",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList multi-step identifier carry-over for profile events (FORMS-33821) carries the previously-submitted phone number into the events when the current step only has an email",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList multi-step identifier carry-over for profile events (FORMS-33821) does not add an identifier to the events when neither the current step nor sentIdentifiers has it",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile attributes creation extracts email from $email field",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile attributes creation extracts phone number when SMS consent is provided",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile attributes creation includes custom properties in profile attributes",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation email subscriptions creates email marketing subscription when opt_in_promotional_email is not false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation email subscriptions does not create email marketing subscription when opt_in_promotional_email is false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation SMS subscriptions creates SMS promotional subscription when consent type is PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation SMS subscriptions does not create SMS promotional subscription when consent type is PROMOTIONAL and opt_in_promotional_sms is false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation SMS subscriptions creates SMS transactional subscription when consent type is TRANSACTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation SMS subscriptions creates SMS transactional and marketing subscription when consent type is SINGLE_STEP_TRANSACTIONAL_PROMOTIONAL and opt_in is true",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation SMS subscriptions creates only SMS transactional subscription when consent type is SINGLE_STEP_TRANSACTIONAL_PROMOTIONAL and opt_in is false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation SMS subscriptions creates SMS transactional subscription when consent type is MULTI_STEP_TRANSACTIONAL_PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation WhatsApp subscriptions creates WhatsApp promotional subscription when consent type is PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation WhatsApp subscriptions creates WhatsApp transactional subscription when consent type is TRANSACTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation WhatsApp subscriptions does not create WhatsApp promotional subscription when consent type is PROMOTIONAL and opt_in_promotional_whatsapp is false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation WhatsApp subscriptions creates WhatsApp transactional and marketing subscription when consent type is SINGLE_STEP_TRANSACTIONAL_PROMOTIONAL and opt_in is true",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation WhatsApp subscriptions creates only WhatsApp transactional subscription when consent type is SINGLE_STEP_TRANSACTIONAL_PROMOTIONAL and opt_in is false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation WhatsApp subscriptions creates WhatsApp transactional subscription when consent type is MULTI_STEP_TRANSACTIONAL_PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation combined SMS and WhatsApp subscriptions creates both SMS and WhatsApp promotional subscriptions when both consent types are PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList profile subscription creation combined SMS and WhatsApp subscriptions creates SMS promotional and WhatsApp transactional subscriptions when consent types differ",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when response status is 429 throws RateLimitAPIRequestFailure",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when response status is 403 throws WAFRuleViolationError",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when DatadomeBotDetectionRequestError is thrown handles Datadome error and sets up event listeners",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when error is a progress event error throws WAFRuleViolationError",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when Shopify is available includes Shopify services in the request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList when session storage update fails handles the error gracefully",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION phone number extraction from properties extracts phone number from properties instead of composedFields",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION list ID selection calls getFirstPhoneNumberListId with correct channels",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION list ID selection filters out null consent types when generating channels",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION list ID selection uses the list ID returned by getFirstPhoneNumberListId",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION subscription consent creation SMS subscriptions creates SMS marketing subscription when consent type is MULTI_STEP_TRANSACTIONAL_PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION subscription consent creation WhatsApp subscriptions creates WhatsApp marketing subscription when consent type is MULTI_STEP_TRANSACTIONAL_PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList PROMOTIONAL_OPT_IN_ACTION subscription consent creation combined SMS and WhatsApp subscriptions creates both SMS and WhatsApp marketing subscriptions when both consent types are MULTI_STEP_TRANSACTIONAL_PROMOTIONAL",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true calls setSmartOptInData with phone number, listId, email, and properties when all required data is present",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true calls setSmartOptInData with email from $email identifier when present",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true calls setSmartOptInData with email from non-dollar email identifier when $email is not present",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true calls setSmartOptInData with undefined email when email is not present in either identifier",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true calls setSmartOptInData with properties extracted from buildProfileAttributes",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true does not call setSmartOptInData when phone number is missing",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true does not call setSmartOptInData when listId is missing",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is true calls setSmartOptInData with empty properties object when no custom properties are present",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList smart opt-in logic when requestOTPCode is false does not call setSmartOptInData even when phone number and listId are present",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow sends two separate requests when form has both SMS and WhatsApp consent with Smart Opt-In",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow sends only WhatsApp consent in the first request (no SMS)",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow does not include send_otp_code in the first (WhatsApp) request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow sends only SMS consent with send_otp_code in the second request (no WhatsApp)",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow includes email consent in the first (WhatsApp) request but not the second (SMS) request",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow caches the SMS post body (not the WhatsApp body) for OTP resend",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow stores Smart Opt-In data for SMS OTP verification",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow sends a single request when SMOI is true but only SMS consent is configured (no WhatsApp)",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow sends a single request when both SMS and WhatsApp consent exist but SMOI is false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow returns an array containing both WA and SMS responses on success",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow when DataDome captcha is triggered on the SMS request only retries the SMS request after captcha success, not WhatsApp",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList WA+SMS SMOI split-request flow when DataDome captcha is triggered on the WA request retries both WA and SMS after captcha success",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends the live consent block value [\"TRACKING\"] as the recorded selection",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends the live consent block value [] as the recorded selection",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent keeps the legacy email marketing consent when no selection was recorded",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends shape S1 for {\"selectedModel\":\"MARKETING_AND_ALL_EMAIL_TRACKING\",\"choices\":[\"MARKETING\",\"TRACKING\"]} as the email subscription block",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends shape S2 for {\"selectedModel\":\"OPEN_TRACKING_COMBINED_CONSENT\",\"choices\":[\"COMBINED\"]} as the email subscription block",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends shape S8 for {\"selectedModel\":\"ALL_TRACKING_COMBINED_CONSENT\",\"choices\":[]} as the email subscription block",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent lets the consent block win over opt_in_promotional_email true",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent lets the consent block win over opt_in_promotional_email false",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends no email block when the submit carries no email",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent sends tracking on the email request only in the WA+SMS Smart Opt-In split",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent keeps the selection when the WA+SMS split is retried after a captcha",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent Continue with Shop applies the recorded selection to a popup Shop submit",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent Continue with Shop applies the recorded selection to the email request when Shop phone consent goes to a separate list",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent Continue with Shop keeps the legacy email consent for a Shop submit on a form restored after a redirect",
+          "status": "passed"
+        },
+        {
+          "name": "submitToList marketing tracking consent Continue with Shop applies the recorded selection to a non-Shop submit on a restored form",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

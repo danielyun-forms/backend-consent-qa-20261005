@@ -1,0 +1,83 @@
+{
+  "runId": "local-real-api-20261005",
+  "startedAt": "2026-10-06T00:44:21.660837+00:00",
+  "completedAt": "2026-10-06T00:45:07.369719+00:00",
+  "sourceRevision": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+  "testCount": 12,
+  "tests": [
+    {
+      "id": "test_rollout_defaults_off",
+      "status": "pass"
+    },
+    {
+      "id": "test_allowlist_requires_global_switch",
+      "status": "pass"
+    },
+    {
+      "id": "test_disallow_overrides_allowlist_and_full_percentage",
+      "status": "pass"
+    },
+    {
+      "id": "test_ten_percent_stable_real_sharding",
+      "status": "pass"
+    },
+    {
+      "id": "test_rollout_filter_emits_local_drop_signal[False-ops0]",
+      "status": "pass"
+    },
+    {
+      "id": "test_rollout_filter_emits_local_drop_signal[True-ops1]",
+      "status": "pass"
+    },
+    {
+      "id": "test_absent_tracking_has_no_rollout_drop_signal",
+      "status": "pass"
+    },
+    {
+      "id": "test_sync_fallback_signal_and_operation_preservation[False]",
+      "status": "pass"
+    },
+    {
+      "id": "test_sync_fallback_signal_and_operation_preservation[True]",
+      "status": "pass"
+    },
+    {
+      "id": "test_tracking_applied_after_profile_protection_returns_block[allow]",
+      "status": "pass"
+    },
+    {
+      "id": "test_tracking_applied_after_profile_protection_returns_block[deny]",
+      "status": "pass"
+    },
+    {
+      "id": "test_public_onsite_auth_has_no_identity_ownership_proof",
+      "status": "pass"
+    }
+  ],
+  "rolloutSample": {
+    "sampleSize": 10000,
+    "selected": 1018,
+    "percentage": 10.18,
+    "stable": true,
+    "globalSwitchRequired": true
+  },
+  "openapi": {
+    "evidenceRunId": "local-real-api-20261005",
+    "generatedAt": "2026-10-06T00:56:51.272272+00:00",
+    "generationExitCode": 0,
+    "revision": "2025-01-15",
+    "sha256": "d2acc991ff148a3c2507a590d368399868bfd31adb8b7f06b3a2817a9835aaea",
+    "trackingEnum": [
+      "SUBSCRIBED",
+      "UNSUBSCRIBED"
+    ],
+    "fields": [
+      "marketing",
+      "open_tracking",
+      "click_tracking"
+    ],
+    "limitations": [
+      "Fresh generation succeeded; no independent upstream-breaking-diff CI baseline verified."
+    ]
+  }
+}
