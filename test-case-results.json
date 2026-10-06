@@ -1,0 +1,3666 @@
+{
+  "title": "Backend tracking consent verification",
+  "generatedAt": "2026-10-06T00:36:27.295639+00:00",
+  "preview": false,
+  "counts": {
+    "pass": 34,
+    "partial": 11,
+    "fail": 3,
+    "changed": 15,
+    "blocked": 1
+  },
+  "caseCount": 64,
+  "provenance": {
+    "date": "2026-10-05",
+    "generatedAt": "2026-10-06T00:24:55.374675+00:00",
+    "sourceSheet": "https://docs.google.com/spreadsheets/d/1Sm1uGCZF1pEYF7u7Ik7IcX7BkguBqVryOzUrfO1kDjY/edit?gid=1366944195#gid=1366944195",
+    "repositories": {
+      "app": {
+        "sha": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+        "ref": "origin/master",
+        "subject": "CAD-1027: Remove from Lists mapping for DWH Import (#149907)"
+      },
+      "fender": {
+        "sha": "5c174384ca8ade15c3e5b3b4e6b25cb7df55ca63",
+        "ref": "origin/master",
+        "subject": "Make the SMS and RCS campaign previews look like the messaging apps (#72087)"
+      },
+      "k-repo": {
+        "sha": "cbb7617458f5a345a733e99a30ffe88b0257de81",
+        "ref": "origin/main",
+        "subject": "feat(applications): KRepoLayout and the k-repo scaffold binary over the shipped CLI (#75631)"
+      }
+    },
+    "scope": "Fresh fetched upstream default branches in detached isolated worktrees. Main checkout branches and uncommitted changes preserved. Synthetic local data; external subscription, queue publishing and outbound integration calls intercepted. No live customer traffic or remote subscription API calls.",
+    "checklistCases": 64,
+    "sourceCheckoutsCleanAfterTests": true,
+    "environmentRecovery": "Started existing local services and removed only a verified stale MySQL socket and lock. No database schema migrations or resets performed.",
+    "sourceUpdateStrategy": "Fetched upstream default branches, then used isolated detached worktrees to preserve active branches and local edits."
+  },
+  "scope": "Synthetic local API, adapter, consumer and protocol fixtures, with boundaries stated per case. No real remote subscription API calls, Shopify submissions or production permission writes. Database persistence demonstrated by local integration tests is identified per case. Intercepted queue or external calls do not establish production end-to-end delivery.",
+  "sources": {
+    "adapter": {
+      "receivedCases": 30
+    },
+    "consumer": {
+      "receivedCases": 19
+    },
+    "crossrepo": {
+      "receivedCases": 2
+    },
+    "controls": {
+      "receivedCases": 13
+    }
+  },
+  "cases": [
+    {
+      "": "0",
+      "ID": "AC-01",
+      "Area": "API contract & validation",
+      "Priority": "P0",
+      "Test case": "open_tracking SUBSCRIBED is accepted and maps to ALLOW",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send subscriptions.email = {\"open_tracking\": {\"consent\": \"SUBSCRIBED\"}}.",
+      "Expected result": "202 Accepted. The adapter resolves the value to ProfilePermissionOperationType.ALLOW.",
+      "Coverage": "app: test_client_dtos.py, test_client.py",
+      "Source of truth / notes": "ClientTrackingConsentStatus merges both directions because /client is a single POST.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Current-revision HTTP accepts open tracking SUBSCRIBED with 202 and captures ALLOW, without marketing flags.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "202 Accepted. The adapter resolves the value to ProfilePermissionOperationType.ALLOW.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "1",
+      "ID": "AC-02",
+      "Area": "API contract & validation",
+      "Priority": "P0",
+      "Test case": "click_tracking UNSUBSCRIBED is accepted and maps to DENY",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send subscriptions.email = {\"click_tracking\": {\"consent\": \"UNSUBSCRIBED\"}}.",
+      "Expected result": "202 Accepted. The adapter resolves the value to ProfilePermissionOperationType.DENY.",
+      "Coverage": "app: test_client_dtos.py, test_client.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Current-revision HTTP accepts click tracking UNSUBSCRIBED with 202 and captures DENY, without marketing flags.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "202 Accepted. The adapter resolves the value to ProfilePermissionOperationType.DENY.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "2",
+      "ID": "AC-03",
+      "Area": "API contract & validation",
+      "Priority": "P0",
+      "Test case": "Both tracking types in one request",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send open_tracking SUBSCRIBED and click_tracking UNSUBSCRIBED together.",
+      "Expected result": "202. Open resolves ALLOW, click resolves DENY; the two travel different code paths from here.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "ALLOW rides inside subscribe(); DENY goes through unsubscribe_v2().",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Mixed open ALLOW/click DENY is accepted; both operations survive KMS serialization and the sync batch. Current sync uses one shared permission batch.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+            ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_0_mixed"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred.",
+            "Functional assertions completed, but the default 300 MB RSS growth guard failed. It was neither disabled nor increased. See run XML for exact growth."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_branch_preserves_operations_and_gate_0_mixed",
+              "class": ".TestAdapterHTTP",
+              "status": "fail",
+              "memoryGuardFailure": true,
+              "failureReason": "Failed: Test exceeded RSS growth limit:\n  RSS before: 1,396,976 KB (1364.2 MB)\n  RSS after:  1,733,472 KB (1692.8 MB)\n  Growth:     336,496 KB (328.6 MB)\n  Limit:      307,200 KB (300.0 MB)\n  Exceeded by: 29,296 KB (28.6 MB)"
+            }
+          ],
+          "classification": "memory-guard",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml",
+            "adapter/unit.xml"
+          ],
+          "expected": "202. Open resolves ALLOW, click resolves DENY; the two travel different code paths from here.",
+          "nextSteps": [
+            "Investigate cold HTTP request memory allocation in the standard test environment; retain the existing 300 MB guard."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "3",
+      "ID": "AC-04",
+      "Area": "API contract & validation",
+      "Priority": "P0",
+      "Test case": "Tracking consent without an email identifier is rejected",
+      "Preconditions": "A request whose profile carries only a phone_number",
+      "Steps": "Send either tracking key with no email attribute.",
+      "Expected result": "400, error code \"invalid\", detail \"An email identifier is required for email tracking consent.\", source pointer /data/attributes/profile/data/attributes/email. No subscription is published.",
+      "Coverage": "app: test_client_view.py",
+      "Source of truth / notes": "validate_tracking_consent_requires_email. Tracking consent is keyed on email, so this must fail at the boundary.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Current and beta requests without email return 400 with the exact email-required message, invalid code, and email JSON pointer; publish is not called.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+            ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+            ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+            ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_1_click_tracking"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_beta_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+              "class": ".TestAdapterBetaHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_beta_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+              "class": ".TestAdapterBetaHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "400, error code \"invalid\", detail \"An email identifier is required for email tracking consent.\", source pointer /data/attributes/profile/data/attributes/email. No subscription is published.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "4",
+      "ID": "AC-05",
+      "Area": "API contract & validation",
+      "Priority": "P1",
+      "Test case": "An email block with no marketing and no tracking is rejected",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send subscriptions.email = {} (or with only unrelated keys).",
+      "Expected result": "400 with \"email must specify at least one of 'marketing', 'open_tracking', or 'click_tracking'.\"",
+      "Coverage": "app: test_client_dtos.py",
+      "Source of truth / notes": "validate_email_subscription_parameters.",
+      "status": "fail",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "fail",
+          "status": "fail",
+          "observation": "Both inputs reject with HTTP 400 invalid. Empty email matches the sheet message. Unknown-only input instead reports: 'unrelated' is not a valid field for the resource 'email_subscription_parameters'. Thus the exact-message assertion fails for the unknown-key variant.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_0_empty",
+            ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_1_unknown_key"
+          ],
+          "limitations": [
+            "Safe rejection is verified; the failure concerns the sheet's exact error detail, not accepting invalid consent."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_invalid_email_consent_returns_400_0_empty",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_invalid_email_consent_returns_400_1_unknown_key",
+              "class": ".TestAdapterHTTP",
+              "status": "fail",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "checklist-detail-mismatch",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "400 with \"email must specify at least one of 'marketing', 'open_tracking', or 'click_tracking'.\"",
+          "nextSteps": [
+            "Decide whether the checklist should accept the framework's unknown-field error or require a unified custom error. No input acceptance bug was observed."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "5",
+      "ID": "AC-06",
+      "Area": "API contract & validation",
+      "Priority": "P1",
+      "Test case": "An unrecognised consent value is rejected by the DTO",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send {\"open_tracking\": {\"consent\": \"MAYBE\"}}.",
+      "Expected result": "400 before any adapter code runs; never a 500.",
+      "Coverage": "app: test_client_dtos.py",
+      "Source of truth / notes": "Matt's answer to the KeyError review note: the enum rejects unknown values before the operation map is read.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "MAYBE is rejected at the DTO boundary as a 400 JSON:API invalid error; no publish occurs.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_2_invalid_consent"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_invalid_email_consent_returns_400_2_invalid_consent",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "400 before any adapter code runs; never a 500.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "6",
+      "ID": "AC-07",
+      "Area": "API contract & validation",
+      "Priority": "P0",
+      "Test case": "A marketing-only request is unchanged",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send subscriptions.email = {\"marketing\": {...}} with no tracking keys.",
+      "Expected result": "Behaviour identical to before the stack: list membership and marketing consent only, no tracking permissions touched.",
+      "Coverage": "app: test_client_view.py",
+      "Source of truth / notes": "REGRESSION GUARD - this is the overwhelming majority of real traffic.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Focused local HTTP/consumer regression verifies real marketing consent and list membership, with no open/click tracking permission rows. The serialized marketing message also has neither tracking field.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_send_subscription_omits_tracking_operation_for_marketing",
+            ".TestMarketingPersistence::test_qa_extra_marketing_only_persists_no_tracking"
+          ],
+          "limitations": [
+            "Synthetic local persistence with outbound event/queue boundaries intercepted; no remote subscription. Initial broader regression timed out at an event-publisher boundary and is preserved in http.xml.",
+            "Functional assertions completed, but the default 300 MB RSS growth guard failed. It was neither disabled nor increased. See run XML for exact growth."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_send_subscription_omits_tracking_operation_for_marketing",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http-extra",
+              "name": "test_qa_extra_marketing_only_persists_no_tracking",
+              "class": ".TestMarketingPersistence",
+              "status": "fail",
+              "memoryGuardFailure": true,
+              "failureReason": "Failed: Test exceeded RSS growth limit:\n  RSS before: 1,413,728 KB (1380.6 MB)\n  RSS after:  1,779,536 KB (1737.8 MB)\n  Growth:     365,808 KB (357.2 MB)\n  Limit:      307,200 KB (300.0 MB)\n  Exceeded by: 58,608 KB (57.2 MB)"
+            }
+          ],
+          "classification": "memory-guard",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http-extra.xml",
+            "adapter/unit.xml"
+          ],
+          "expected": "Behaviour identical to before the stack: list membership and marketing consent only, no tracking permissions touched.",
+          "nextSteps": [
+            "Investigate cold HTTP request memory allocation in the standard test environment; retain the existing 300 MB guard."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "7",
+      "ID": "AC-08",
+      "Area": "API contract & validation",
+      "Priority": "P0",
+      "Test case": "A request with no subscription keys keeps implicit marketing opt-in",
+      "Preconditions": "POST /client/subscriptions with a company_id and an email identifier",
+      "Steps": "Send a back-in-stock style request with no subscriptions block at all.",
+      "Expected result": "Legacy behaviour preserved: the consumer subscribes every channel that has an identifier.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "has_marketing defaults True when nothing was requested AND no tracking was requested.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Missing subscriptions and resolved empty consent retain legacy marketing publish flags; tracking fields remain absent.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_disabled]",
+            "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_enabled]",
+            "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_disabled]",
+            "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_enabled]",
+            ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_2_current_missing_subscriptions"
+          ],
+          "limitations": [
+            "Publisher behavior executed; consumer legacy behavior additionally covered by consumer/unit-existing.xml. No live consumer delivery."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_disabled]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_enabled]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_disabled]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_enabled]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_legacy_converters_preserve_marketing_2_current_missing_subscriptions",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml",
+            "adapter/unit.xml"
+          ],
+          "expected": "Legacy behaviour preserved: the consumer subscribes every channel that has an identifier.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "8",
+      "ID": "AC-09",
+      "Area": "API contract & validation",
+      "Priority": "P1",
+      "Test case": "Deprecated revisions still work",
+      "Preconditions": "Older API revisions that go through convert_from_deprecated_dto / convert_from_deprecated_oct24_dto",
+      "Steps": "Send requests on both deprecated revisions.",
+      "Expected result": "Both convert into ClientProfileUpsertQueryWithSubscriptions and behave as before.",
+      "Coverage": "app: test_client_view.py, test_client_view_beta.py",
+      "Source of truth / notes": "#145726 swapped the DTO type in both converters.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Both deprecated API revision payloads traverse real conversion and return 202 with legacy marketing-only publication.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_0_original",
+            ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_1_oct24"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/views/apis/v3/subscriptions/dtos/client.py:68",
+            "src/learning/app/views/apis/v3/subscriptions/viewsets/client.py:61",
+            "tests/views/apis/v3/subscriptions/viewsets/test_client_view.py:480"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_legacy_converters_preserve_marketing_0_original",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_legacy_converters_preserve_marketing_1_oct24",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "Both convert into ClientProfileUpsertQueryWithSubscriptions and behave as before.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "9",
+      "ID": "AC-10",
+      "Area": "API contract & validation",
+      "Priority": "P1",
+      "Test case": "OpenAPI spec generates with no breaking change",
+      "Preconditions": "CI",
+      "Steps": "Let the V3 API Check run.",
+      "Expected result": "Spec generation succeeds and no breaking changes are reported.",
+      "Coverage": "CI: generate-oas",
+      "Source of truth / notes": "Already green on #145726.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "OpenAPI 3.0.2 generation succeeded for revision 2025-01-15. Generated schema includes optional open_tracking/click_tracking and SUBSCRIBED/UNSUBSCRIBED enum. Latest app commit overall CI status is success.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [],
+          "limitations": [
+            "No separate generate-oas breaking-diff child result or baseline schema comparison was verified; overall CI green is not proof of no breaking changes.",
+            "Generation emitted unrelated introspection warnings."
+          ],
+          "sourceRefs": [
+            "controls/openapi-summary.json",
+            ".buildkite/pipelines/oas-diff-check.yml"
+          ],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "10",
+      "ID": "SY-01",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P0",
+      "Test case": "ALLOW is passed into subscribe() rather than written separately",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used; sync fallback enabled for the company",
+      "Steps": "Send open_tracking SUBSCRIBED.",
+      "Expected result": "subscribe() receives an OpenTrackingConsentRequest in open_tracking_consent; no unsubscribe_v2 call is made.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "ALLOW is now a request in modify_permissions after marketing subscribe; it is not passed to subscribe as consent_requests.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]"
+          ],
+          "limitations": [
+            "The literal checklist expectation is obsolete; current checked-in tests and runtime agree on the intentional shared-batch contract. This is not classified as a product regression."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "subscribe() receives an OpenTrackingConsentRequest in open_tracking_consent; no unsubscribe_v2 call is made.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "11",
+      "ID": "SY-02",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P0",
+      "Test case": "DENY goes through unsubscribe_v2()",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Send click_tracking UNSUBSCRIBED.",
+      "Expected result": "unsubscribe_v2 is called with an UnsubscribeDTO whose UnsubscribeRequest carries action CLICK_TRACKING_CONSENT and the email as identifier.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "ALLOW and DENY are asymmetric by design - they are different service calls.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "DENY is now a request in modify_permissions; unsubscribe_v2 is never invoked.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]"
+          ],
+          "limitations": [
+            "The literal checklist expectation is obsolete; current checked-in tests and runtime agree on the intentional shared-batch contract. This is not classified as a product regression."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "unsubscribe_v2 is called with an UnsubscribeDTO whose UnsubscribeRequest carries action CLICK_TRACKING_CONSENT and the email as identifier.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "12",
+      "ID": "SY-03",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P0",
+      "Test case": "A mixed request splits correctly",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Send open_tracking SUBSCRIBED and click_tracking UNSUBSCRIBED.",
+      "Expected result": "subscribe() gets the open ALLOW plus the email-marketing channel map; unsubscribe_v2 gets only the click DENY.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "Jon Parise asked this be asserted on both halves; Matt confirmed the existing test does.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Mixed ALLOW/DENY is one tracking batch after the marketing call; marketing channel map is preserved.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]"
+          ],
+          "limitations": [
+            "The literal checklist expectation is obsolete; current checked-in tests and runtime agree on the intentional shared-batch contract. This is not classified as a product regression."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "subscribe() gets the open ALLOW plus the email-marketing channel map; unsubscribe_v2 gets only the click DENY.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "13",
+      "ID": "SY-04",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P0",
+      "Test case": "unsubscribe_v2 runs BEFORE subscribe",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Send a mixed ALLOW/DENY request and record call order.",
+      "Expected result": "unsubscribe_v2 is invoked first, then subscribe.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "Deliberate ordering, and the opposite of the KMS consumer's order in #145870 - see FM-04.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Observed order is marketing subscribe then tracking modify_permissions. There is no unsubscribe_v2 step.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]"
+          ],
+          "limitations": [
+            "The literal checklist expectation is obsolete; current checked-in tests and runtime agree on the intentional shared-batch contract. This is not classified as a product regression."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "unsubscribe_v2 is invoked first, then subscribe.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "14",
+      "ID": "SY-05",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P1",
+      "Test case": "Metadata carries subscribe_method and client IP",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Send a tracking request from a known IP.",
+      "Expected result": "Open and click metadata both carry subscribe_method and ip_address.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "Was a Cursor Bugbot finding on #145743; fixed in 590802116f6.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Full-object equality confirms open and click requests carry the expected subscribe method and client IP.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "Open and click metadata both carry subscribe_method and ip_address.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "15",
+      "ID": "SY-06",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P1",
+      "Test case": "No email in the submitted data skips tracking entirely",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Reach process_subscription_sync with no email in submitted_data.",
+      "Expected result": "Neither a consent request nor an unsubscribe request is built; marketing processing is unaffected.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "Belt-and-braces behind AC-04, for internal callers that bypass the DTO.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "No-email sync input skips all tracking writes and preserves the marketing channel map.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_no_email_skips_tracking_preserves_marketing"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_no_email_skips_tracking_preserves_marketing",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "Neither a consent request nor an unsubscribe request is built; marketing processing is unaffected.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "16",
+      "ID": "SY-07",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P0",
+      "Test case": "The sync path is only reached when KMS is off or publishing throws",
+      "Preconditions": "Both hot settings in their normal state",
+      "Steps": "Send a tracking request with KMS enabled.",
+      "Expected result": "process_subscription (KMS) is used; process_subscription_sync is not called.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "KMS-enabled API request emits its tracking message; sync subscribe/modify are not called.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_0_mixed"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred.",
+            "Functional assertions completed, but the default 300 MB RSS growth guard failed. It was neither disabled nor increased. See run XML for exact growth."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_branch_preserves_operations_and_gate_0_mixed",
+              "class": ".TestAdapterHTTP",
+              "status": "fail",
+              "memoryGuardFailure": true,
+              "failureReason": "Failed: Test exceeded RSS growth limit:\n  RSS before: 1,396,976 KB (1364.2 MB)\n  RSS after:  1,733,472 KB (1692.8 MB)\n  Growth:     336,496 KB (328.6 MB)\n  Limit:      307,200 KB (300.0 MB)\n  Exceeded by: 29,296 KB (28.6 MB)"
+            }
+          ],
+          "classification": "memory-guard",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "process_subscription (KMS) is used; process_subscription_sync is not called.",
+          "nextSteps": [
+            "Investigate cold HTTP request memory allocation in the standard test environment; retain the existing 300 MB guard."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "17",
+      "ID": "SY-08",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P1",
+      "Test case": "Sync fallback disabled drops the work rather than writing it",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used; sync fallback hot setting OFF for the company",
+      "Steps": "Send a tracking request.",
+      "Expected result": "Nothing is written. A \"DropSyncSubscription\" log is emitted for the company.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "is_sync_subscribe_fallback_enabled.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "KMS disabled and sync fallback disabled returns 202 without subscription or tracking writes and logs DropSyncSubscription.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_3_drop_sync"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_branch_preserves_operations_and_gate_3_drop_sync",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "Nothing is written. A \"DropSyncSubscription\" log is emitted for the company.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "18",
+      "ID": "SY-09",
+      "Area": "Synchronous path (fallback)",
+      "Priority": "P0",
+      "Test case": "The sync path has no rollout gate",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used; FormsMarketingTrackingConsentHotSetting disabled for the company (the default)",
+      "Steps": "Send a tracking request that reaches the sync path.",
+      "Expected result": "DOCUMENT THE ACTUAL BEHAVIOUR. The rollout filter lives in the KMS path only, so the sync path may write tracking permissions with the rollout off.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "OPEN ISSUE: Peter raised exactly this on #145743 and the thread is still unresolved. Matt's answer was merge-ordering, not a gate. Worth a decision now that #145765 has landed.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "changed",
+          "observation": "Actual HTTP behavior: rollout disabled drops tracking before sync dispatch, so no tracking write occurs. The sheet's sync gate concern is resolved on this SHA.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_2_sync_gate_off"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_branch_preserves_operations_and_gate_2_sync_gate_off",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "DOCUMENT THE ACTUAL BEHAVIOUR. The rollout filter lives in the KMS path only, so the sync path may write tracking permissions with the rollout off.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "19",
+      "ID": "KP-01",
+      "Area": "KMS publish",
+      "Priority": "P0",
+      "Test case": "Operations are mapped onto the proto message",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send open SUBSCRIBED and click UNSUBSCRIBED.",
+      "Expected result": "The published Subscription carries open_tracking_consent = TRACKING_CONSENT_OPERATION_ALLOW and click_tracking_consent = TRACKING_CONSENT_OPERATION_DENY.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "k-repo #69340 added the fields to the contract.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Real Subscription protobuf capture contains both open ALLOW and click DENY.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_kms_actual_proto_contains_requested_operations[mixed_tracking_only]"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_kms_actual_proto_contains_requested_operations[mixed_tracking_only]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "The published Subscription carries open_tracking_consent = TRACKING_CONSENT_OPERATION_ALLOW and click_tracking_consent = TRACKING_CONSENT_OPERATION_DENY.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "20",
+      "ID": "KP-02",
+      "Area": "KMS publish",
+      "Priority": "P1",
+      "Test case": "Fields are omitted when no tracking decision was made",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send a marketing-only request.",
+      "Expected result": "Neither tracking field is set on the message.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "The fields are only assigned when not None.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Marketing-only protobuf reports HasField false for both tracking fields.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_send_subscription_omits_tracking_operation_for_marketing"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_send_subscription_omits_tracking_operation_for_marketing",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "Neither tracking field is set on the message.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "21",
+      "ID": "KP-03",
+      "Area": "KMS publish",
+      "Priority": "P2",
+      "Test case": "An invalid operation raises rather than publishing",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path",
+      "Steps": "Call process_subscription with an operation that is not ALLOW or DENY.",
+      "Expected result": "ValueError: Tracking consent operations must be ALLOW or DENY. Nothing is published.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "_validate_tracking_operations; other ProfilePermissionOperationType members exist.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Unsupported PROFILE_MERGE operation raises ValueError before any queue publish.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_process_subscription_rejects_invalid_tracking_operation_before_publishing"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_process_subscription_rejects_invalid_tracking_operation_before_publishing",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "ValueError: Tracking consent operations must be ALLOW or DENY. Nothing is published.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "22",
+      "ID": "KP-04",
+      "Area": "KMS publish",
+      "Priority": "P0",
+      "Test case": "A tracking-only request publishes a tracking-only message",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send only click_tracking UNSUBSCRIBED, no marketing.",
+      "Expected result": "One Subscription with subscribe_to_email False, subscribe_to_sms False and an empty subscription_type, carrying the tracking field.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "This is the shape the consumer recognises as is_tracking_only.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Tracking-only click DENY emits exactly one protobuf with both marketing flags false and empty subscription_type.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_kms_actual_proto_contains_requested_operations[click_deny_only]"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_kms_actual_proto_contains_requested_operations[click_deny_only]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "One Subscription with subscribe_to_email False, subscribe_to_sms False and an empty subscription_type, carrying the tracking field.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "23",
+      "ID": "KP-05",
+      "Area": "KMS publish",
+      "Priority": "P0",
+      "Test case": "A tracking request with the rollout off publishes NOTHING",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting disabled for the company (the default)",
+      "Steps": "Send a tracking-only request.",
+      "Expected result": "No KMS message at all. Critically, the request must NOT fall back to a legacy marketing subscribe.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "The subtlest guard in the stack: tracking_consent_requested is captured BEFORE the rollout filter, so the has_marketing fallback stays suppressed. Without it, 'do not track me' would become a marketing opt-in.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Rollout-off tracking-only request returns 202 but publishes nothing and does not infer marketing.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_process_subscription_dropped_tracking_request_does_not_infer_marketing",
+            ".TestAdapterHTTP::test_qa_existing_test_create_suppresses_tracking_publish_when_rollout_is_disabled"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_process_subscription_dropped_tracking_request_does_not_infer_marketing",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "http",
+              "name": "test_qa_existing_test_create_suppresses_tracking_publish_when_rollout_is_disabled",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml",
+            "adapter/unit.xml"
+          ],
+          "expected": "No KMS message at all. Critically, the request must NOT fall back to a legacy marketing subscribe.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "24",
+      "ID": "KP-06",
+      "Area": "KMS publish",
+      "Priority": "P0",
+      "Test case": "Marketing plus tracking publishes a single message",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send marketing plus both tracking keys.",
+      "Expected result": "One Subscription carrying both the marketing channels and the tracking fields.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "One protobuf carries email marketing and both tracking decisions.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_kms_actual_proto_contains_requested_operations[marketing_plus_both]"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_kms_actual_proto_contains_requested_operations[marketing_plus_both]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "One Subscription carrying both the marketing channels and the tracking fields.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "25",
+      "ID": "KP-07",
+      "Area": "KMS publish",
+      "Priority": "P0",
+      "Test case": "Rollout off leaves marketing untouched",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting disabled for the company (the default)",
+      "Steps": "Send marketing plus tracking.",
+      "Expected result": "The marketing subscribe publishes exactly as before; only the tracking fields are dropped, with a log and a metric.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "REGRESSION GUARD for the rollout period.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Rollout-off mixed marketing/tracking request publishes marketing once without tracking fields, logs TrackingConsentDrop, and increments the drop counter.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_rollout_drop_logs_and_counts_once"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_rollout_drop_logs_and_counts_once",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "The marketing subscribe publishes exactly as before; only the tracking fields are dropped, with a log and a metric.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "26",
+      "ID": "SH-01",
+      "Area": "Shopify / ShopPay path",
+      "Priority": "P0",
+      "Test case": "A Shopify request with tracking publishes two messages",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting enabled for the company; a customer_access_token present",
+      "Steps": "Send a Shopify request with a tracking decision.",
+      "Expected result": "A ShopifySubscription for the marketing work, plus a second Subscription carrying only the tracking fields with every subscribe flag false.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "ShopifySubscription has no tracking fields. group_id stays required on the extra message but must not add list membership.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Shop request produces exactly one ShopifySubscription for marketing and one tracking-only Subscription with both operations and all marketing flags false.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_shop_actual_proto_count_and_tracking_separation[shop_with_tracking]"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_shop_actual_proto_count_and_tracking_separation[shop_with_tracking]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "A ShopifySubscription for the marketing work, plus a second Subscription carrying only the tracking fields with every subscribe flag false.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "27",
+      "ID": "SH-02",
+      "Area": "Shopify / ShopPay path",
+      "Priority": "P0",
+      "Test case": "A Shopify request without tracking is unchanged",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; a customer_access_token present",
+      "Steps": "Send a Shopify request with no tracking keys.",
+      "Expected result": "Exactly one ShopifySubscription, as before the stack.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "REGRESSION GUARD. #145765 changed `return self._send_shopify_subscription(...)` to a bare call so a second message could follow.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Shop request without tracking produces exactly one ShopifySubscription and no extra Subscription.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_shop_actual_proto_count_and_tracking_separation[legacy_shop]"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_shop_actual_proto_count_and_tracking_separation[legacy_shop]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "Exactly one ShopifySubscription, as before the stack.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "28",
+      "ID": "SH-03",
+      "Area": "Shopify / ShopPay path",
+      "Priority": "P1",
+      "Test case": "The extra message does not add list membership",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields; as SH-01",
+      "Steps": "Publish and consume both messages; inspect list membership.",
+      "Expected result": "The profile is on the list once, from the Shopify message only; the tracking-only message adds no membership.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Both real consumers execute in order: Shopify email marketing creates one membership and one list event; the tracking companion preserves those counts and writes open ALLOW/click DENY.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerPermissionSequence::test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event"
+          ],
+          "limitations": [
+            "The external Shopify access-token lookup is faked with a valid no-phone response. This verifies email membership accounting, not SMS enrollment or live ShopPay authentication."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "pair",
+              "name": "test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/pair.xml"
+          ],
+          "expected": "The profile is on the list once, from the Shopify message only; the tracking-only message adds no membership.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "29",
+      "ID": "SH-04",
+      "Area": "Shopify / ShopPay path",
+      "Priority": "P1",
+      "Test case": "Continue-with-Shop resume does not write a false refusal",
+      "Preconditions": "A Shop form that redirects away and returns",
+      "Steps": "Submit through the Shop path with marketing unchecked, then return.",
+      "Expected result": "DOCUMENT THE ACTUAL BEHAVIOUR. Today the Shop path subscribes regardless of the unchecked marketing box.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "OPEN ISSUE: Peter's open question #1 on fender #70901. The stopgap gate avoids a false tracking refusal but the marketing side is unresolved; needs a tracked follow-up.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "crossrepo",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Current frontend intentionally ignores consent selection only when a Shop submission resumes from redirect. This omits open/click tracking decisions and avoids writing a false tracking refusal from the re-seeded empty block. It retains legacy marketing SUBSCRIBED unless the separate legacy opt_in_promotional_email flag is false. This documents the unresolved unchecked-marketing behavior; it is not a claim that marketing choice is preserved. Existing resume, popup, separate-phone-list and non-Shop restored-form unit cases all pass.",
+          "scope": "Source trace plus four passing Shop-path unit cases with outgoing API wrapper mocked. No actual Shopify redirect or persistence execution.",
+          "testNodeIds": [
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop applies the recorded selection to a popup Shop submit",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop applies the recorded selection to the email request when Shop phone consent goes to a separate list",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop keeps the legacy email consent for a Shop submit on a form restored after a redirect",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop applies the recorded selection to a non-Shop submit on a restored form"
+          ],
+          "limitations": [
+            "No redirect-away-and-return flow was executed.",
+            "Existing resume unit fixture uses checked MARKETING; exact unchecked-before-redirect case requires an additional fixture or actual isolated integration test.",
+            "Downstream marketing or tracking permission records were not inspected."
+          ],
+          "sourceRefs": [
+            "fender/client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.ts:1079",
+            "fender/client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts:4371"
+          ],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "crossrepo/source-review.json",
+            "crossrepo/frontend-summary.json"
+          ],
+          "evidence": [
+            "evidence/crossrepo-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "30",
+      "ID": "KC-01",
+      "Area": "KMS consume",
+      "Priority": "P0",
+      "Test case": "ALLOW writes a positive permission record",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Publish and consume a message with open_tracking_consent ALLOW.",
+      "Expected result": "A ProfilePermission row for OPEN_TRACKING_CONSENT with permission_outcome true, customer_id and subject_id set to the profile.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Consumer ALLOW creates both open/click permission rows with true outcomes and matching customer/subject/email identity.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml"
+          ],
+          "expected": "A ProfilePermission row for OPEN_TRACKING_CONSENT with permission_outcome true, customer_id and subject_id set to the profile.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "31",
+      "ID": "KC-02",
+      "Area": "KMS consume",
+      "Priority": "P0",
+      "Test case": "DENY revokes through unsubscribe_v2",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a message with click_tracking_consent DENY.",
+      "Expected result": "unsubscribe_v2 is called and the click permission ends in a refused state.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Click DENY persists false through the shared modify_permissions batch. Current consumer never calls unsubscribe_v2 for tracking.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+            ".TestConsumerWorksheetCases::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "unsubscribe_v2 is called and the click permission ends in a refused state.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "32",
+      "ID": "KC-03",
+      "Area": "KMS consume",
+      "Priority": "P0",
+      "Test case": "A tracking-only DENY does not call subscribe()",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a tracking-only DENY message (KP-04's shape).",
+      "Expected result": "subscribe() is skipped entirely; only the revocation is applied. No list membership, no Subscribed to List event.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "is_tracking_only plus should_subscribe. Without this guard a refusal would subscribe the shopper.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "DENY-only still calls subscribe with empty channels to retain profile properties, then writes denial permissions. Real persistence verifies no marketing permission or list membership.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_decline_everything_submission_keeps_its_profile_data",
+            ".TestConsumerWorksheetCases::test_decline_everything_submission_keeps_its_profile_data",
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_decline_everything_submission_keeps_its_profile_data",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_decline_everything_submission_keeps_its_profile_data",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "subscribe() is skipped entirely; only the revocation is applied. No list membership, no Subscribed to List event.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "33",
+      "ID": "KC-04",
+      "Area": "KMS consume",
+      "Priority": "P0",
+      "Test case": "A tracking-only ALLOW still calls subscribe()",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a tracking-only ALLOW message.",
+      "Expected result": "subscribe() is called, because ALLOW is applied inside it, but no marketing channels are subscribed.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "has_tracking_allow is why should_subscribe is not simply 'not is_tracking_only'.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Tracking-only ALLOW calls subscribe with empty channels, then applies ALLOW via modify_permissions; it is no longer written inside subscribe. No marketing membership is inferred.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_only_allow_is_applied_as_permissions",
+            ".TestConsumerWorksheetCases::test_tracking_only_allow_is_applied_as_permissions",
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_tracking_only_allow_is_applied_as_permissions",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_tracking_only_allow_is_applied_as_permissions",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "subscribe() is called, because ALLOW is applied inside it, but no marketing channels are subscribed.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "34",
+      "ID": "KC-05",
+      "Area": "KMS consume",
+      "Priority": "P0",
+      "Test case": "Marketing plus tracking applies both",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a message carrying marketing channels and both tracking fields.",
+      "Expected result": "List membership and marketing consent are written, and both tracking permissions are recorded.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Mixed marketing/open ALLOW/click DENY ends with real list membership and true marketing/open permissions plus false click permission.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+            ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+            ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+            ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+            ".TestConsumerPermissionSequence::test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions"
+          ],
+          "limitations": [
+            "The persisted mixed case includes an injected tracking-boundary retry; normal split is also asserted at the consumer boundary."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-existing",
+              "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-existing",
+              "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "List membership and marketing consent are written, and both tracking permissions are recorded.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "35",
+      "ID": "KC-06",
+      "Area": "KMS consume",
+      "Priority": "P1",
+      "Test case": "A message with no email drops the tracking decision",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a tracking message whose submitted_data has no email.",
+      "Expected result": "The tracking work is skipped with a \"SubscriptionExecutor.TrackingConsentDrop\" log and the _no_email metric. Marketing processing is unaffected.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "No-email tracking is skipped, emits SubscriptionExecutor.TrackingConsentDrop and the exact forms.subscription_executor_tracking_consent_drop_no_email counter; subscribe still receives original profile data.",
+          "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_decision_without_email_is_observable",
+            ".TestConsumerWorksheetCases::test_tracking_decision_without_email_is_observable"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_tracking_decision_without_email_is_observable",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_tracking_decision_without_email_is_observable",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "The tracking work is skipped with a \"SubscriptionExecutor.TrackingConsentDrop\" log and the _no_email metric. Marketing processing is unaffected.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "36",
+      "ID": "KC-07",
+      "Area": "KMS consume",
+      "Priority": "P0",
+      "Test case": "Messages without tracking fields behave exactly as before",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a message published before the rollout, with no tracking fields.",
+      "Expected result": "Identical behaviour to current production.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "REGRESSION GUARD - every in-flight message at deploy time looks like this.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Absent/UNSPECIFIED tracking fields preserve legacy subscribe channel dispatch and never invoke tracking modifications. Existing consumer channel regressions also execute.",
+          "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_legacy_message_without_channels_still_subscribes",
+            "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+            ".TestConsumerWorksheetCases::test_legacy_message_without_channels_still_subscribes",
+            ".TestConsumerWorksheetCases::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+            ".TestSubscriptionConsumerRegression::test_no_channels_included",
+            ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_email_channel"
+          ],
+          "limitations": [
+            "Dispatch behavior is executed; this case does not independently replay a historical production message against a production broker."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_legacy_message_without_channels_still_subscribes",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-existing",
+              "name": "test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+              "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_legacy_message_without_channels_still_subscribes",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_no_channels_included",
+              "class": ".TestSubscriptionConsumerRegression",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_pass_in_just_marketing_email_channel",
+              "class": ".TestSubscriptionConsumerRegression",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "Identical behaviour to current production.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "37",
+      "ID": "KC-08",
+      "Area": "KMS consume",
+      "Priority": "P1",
+      "Test case": "A company_id mismatch drops the message",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume a message whose company_id does not match the list's company.",
+      "Expected result": "The message is dropped without writing anything.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "Pre-existing guard; confirm tracking did not bypass it.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "A message with a foreign company ID and a tracking DENY invokes neither subscribe nor modify_permissions.",
+          "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerWorksheetCases::test_company_mismatch_skips_both_services"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-probes",
+              "name": "test_company_mismatch_skips_both_services",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "The message is dropped without writing anything.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "38",
+      "ID": "KC-09",
+      "Area": "KMS consume",
+      "Priority": "P1",
+      "Test case": "The Shopify consumer is unaffected",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Consume ShopifySubscription messages.",
+      "Expected result": "No behaviour change; the Shopify consumer never sees tracking fields.",
+      "Coverage": "app: test_shopify_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Existing Shopify consumer tests exercise valid, invalid-token and rate-limited messages with intercepted Shopify responses and expected subscription dispatch.",
+          "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestSubscriptionConsumerRegression::test_valid_on_message_batch",
+            ".TestShopifySubscriptionConsumerRegression::test_invalid_accesstoken_on_message_batch",
+            ".TestShopifySubscriptionConsumerRegression::test_rate_limited_on_message_batch",
+            ".TestShopifySubscriptionConsumerRegression::test_valid_on_message_batch"
+          ],
+          "limitations": [
+            "External Shopify and subscribe service are intercepted in the existing regressions; no live Shopify mutation occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "integration",
+              "name": "test_valid_on_message_batch",
+              "class": ".TestSubscriptionConsumerRegression",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_invalid_accesstoken_on_message_batch",
+              "class": ".TestShopifySubscriptionConsumerRegression",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_rate_limited_on_message_batch",
+              "class": ".TestShopifySubscriptionConsumerRegression",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_valid_on_message_batch",
+              "class": ".TestShopifySubscriptionConsumerRegression",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml"
+          ],
+          "expected": "No behaviour change; the Shopify consumer never sees tracking fields.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "39",
+      "ID": "RG-01",
+      "Area": "Rollout gating",
+      "Priority": "P0",
+      "Test case": "All four settings default to off",
+      "Preconditions": "A company that was never added to the rollout",
+      "Steps": "Read get_global, get_allow_list, get_percentage and is_enabled_for_company.",
+      "Expected result": "False, empty, 0, and False respectively.",
+      "Coverage": "Manual (django shell)",
+      "Source of truth / notes": "CompanyRolloutHotSettingBundle generates _global_setting, _allow_list, _disallow_list and _percentage_cutoff.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "All four defaults are off/empty/zero. None of 50 synthetic companies is enabled.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_rollout_defaults_off"
+          ],
+          "limitations": [],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "40",
+      "ID": "RG-02",
+      "Area": "Rollout gating",
+      "Priority": "P0",
+      "Test case": "An allow-listed company is included",
+      "Preconditions": "enable_for_company(<id>) applied",
+      "Steps": "Send a tracking request for that company and for another.",
+      "Expected result": "Tracking is honoured for the allow-listed company and dropped for the other.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "This is how internal test accounts should be enabled - not the global flag.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Allowlisting alone does not enable tracking: the global switch is an additional required master enable. With global=true and percentage=0, the allowlisted company is enabled and the unlisted company remains off.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_allowlist_requires_global_switch"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/utils/generic_cutover.py:134"
+          ],
+          "runtimeChecks": [],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "41",
+      "ID": "RG-03",
+      "Area": "Rollout gating",
+      "Priority": "P1",
+      "Test case": "The disallow list overrides allow-list and percentage",
+      "Preconditions": "A company both allow-listed and disallowed",
+      "Steps": "Send a tracking request.",
+      "Expected result": "Tracking is dropped. The disallow list wins.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "Useful as a per-company kill switch during rollout.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Disallow overrides simultaneous allowlist inclusion and 100% rollout.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_disallow_overrides_allowlist_and_full_percentage"
+          ],
+          "limitations": [
+            "Exercised actual rollout decision plus separately verified adapter filter, rather than another HTTP request."
+          ],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "42",
+      "ID": "RG-04",
+      "Area": "Rollout gating",
+      "Priority": "P1",
+      "Test case": "Percentage rollout includes the expected share",
+      "Preconditions": "change_percentage(10)",
+      "Steps": "Evaluate is_enabled_for_company across a sample of ids.",
+      "Expected result": "Roughly ten percent included, and stable per company across calls.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "With percentage=10 and global=false, none is enabled. With global=true, real hashing selects 1,018 of 10,000 synthetic company IDs (10.18%); membership is identical on repeat. Checklist omits the global prerequisite.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_ten_percent_stable_real_sharding"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "controls/rollout-sample.json"
+          ],
+          "runtimeChecks": [],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "43",
+      "ID": "RG-05",
+      "Area": "Rollout gating",
+      "Priority": "P1",
+      "Test case": "Dropping emits a metric and a log",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; FormsMarketingTrackingConsentHotSetting disabled for the company (the default)",
+      "Steps": "Send a tracking request and watch metrics.",
+      "Expected result": "forms.client_subscription_tracking_consent_drop_rollout_disabled increments and a \"ClientSubscription.TrackingConsentDrop\" log is written.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "The signal that tells you whether anyone is sending before rollout.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Disabled rollout returns no tracking operations and emits exactly one forms.client_subscription_tracking_consent_drop_rollout_disabled increment and ClientSubscription.TrackingConsentDrop event. Enabled and absent-tracking cases emit neither.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_rollout_filter_emits_local_drop_signal[False-ops0]",
+            "test_rollout_filter_emits_local_drop_signal[True-ops1]",
+            "test_absent_tracking_has_no_rollout_drop_signal"
+          ],
+          "limitations": [
+            "Signal emission captured at logger/StatsD boundaries; dashboard ingestion is covered separately as unverified OB-01."
+          ],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "44",
+      "ID": "PR-01",
+      "Area": "Permission records & export",
+      "Priority": "P0",
+      "Test case": "Permission rows carry the right identity",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Apply an ALLOW and inspect ProfilePermission.",
+      "Expected result": "action matches OPEN_TRACKING_CONSENT or CLICK_TRACKING_CONSENT, identifier is the email, customer_id and subject_id are the profile id, permission_outcome reflects ALLOW or DENY.",
+      "Coverage": "app: test_client_view.py",
+      "Source of truth / notes": "",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Both real ORM permission rows retain the email identifier and identical customer_id/subject_id; action and ALLOW/DENY outcomes match each submitted operation.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml"
+          ],
+          "expected": "action matches OPEN_TRACKING_CONSENT or CLICK_TRACKING_CONSENT, identifier is the email, customer_id and subject_id are the profile id, permission_outcome reflects ALLOW or DENY.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "45",
+      "ID": "PR-02",
+      "Area": "Permission records & export",
+      "Priority": "P0",
+      "Test case": "Tracking consent appears on the profile export",
+      "Preconditions": "A profile with both tracking permissions recorded",
+      "Steps": "Export the profile and inspect the consent keys.",
+      "Expected result": "email_open_tracking_consent and email_click_tracking_consent appear with their _timestamp counterparts.",
+      "Coverage": "app: tracking_consent/export.py tests",
+      "Source of truth / notes": "Keys come from consent_property_key(channel, communication_type).",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Export properties include email_open_tracking_consent/email_click_tracking_consent and their timestamps when values are recorded. Chooser metadata includes click fields with its gate enabled.",
+          "scope": "Executed export builder/metadata tests with deterministic permission values. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+            "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_build_export_properties"
+          ],
+          "limitations": [
+            "This checks export property generation, not delivery of a completed CSV export job."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+              "class": "tests.subscriptions.profile_permissions.tracking_consent.test_export",
+              "status": "pass"
+            },
+            {
+              "run": "unit-existing",
+              "name": "test_build_export_properties",
+              "class": "tests.subscriptions.profile_permissions.tracking_consent.test_export",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/unit-existing.xml"
+          ],
+          "expected": "email_open_tracking_consent and email_click_tracking_consent appear with their _timestamp counterparts.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "46",
+      "ID": "PR-03",
+      "Area": "Permission records & export",
+      "Priority": "P1",
+      "Test case": "A never-consented profile exports nothing for tracking",
+      "Preconditions": "A profile with no tracking permission rows",
+      "Steps": "Export the profile.",
+      "Expected result": "No tracking consent keys are emitted; a NEVER_SUBSCRIBED state is not exported as a refusal.",
+      "Coverage": "app: tracking_consent/export.py tests",
+      "Source of truth / notes": "Absence of consent is not a denial - do not let it read as one.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Current opt-out export resolves no-record/NEVER_SUBSCRIBED to SUBSCRIBED. Both consent keys are emitted without timestamps, contrary to the sheet's omission expectation.",
+          "scope": "Executed the real export resolution and property builder functions. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+            ".TestConsumerWorksheetCases::test_no_permission_exports_implicit_subscribed_without_timestamps"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/export.py:96",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/export.py:121"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-existing",
+              "name": "test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+              "class": "tests.subscriptions.profile_permissions.tracking_consent.test_export",
+              "status": "pass"
+            },
+            {
+              "run": "unit-probes",
+              "name": "test_no_permission_exports_implicit_subscribed_without_timestamps",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "consumer/unit-existing.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "No tracking consent keys are emitted; a NEVER_SUBSCRIBED state is not exported as a refusal.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "47",
+      "ID": "PR-04",
+      "Area": "Permission records & export",
+      "Priority": "P0",
+      "Test case": "ALLOW then DENY then ALLOW ends in the right state",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send the three requests in sequence for one email.",
+      "Expected result": "The final state is ALLOW with a timestamp from the last request. No interleaving leaves a stale outcome.",
+      "Coverage": "Manual + integration",
+      "Source of truth / notes": "The sequence a real shopper can produce by resubmitting a form.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Sequential ALLOW\u2192DENY\u2192ALLOW via the real consumer leaves both permissions ALLOW, with effective_date and recorded_date equal to the final controlled timestamp.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [
+            "Sequential writes are verified; concurrent interleavings were not stress-tested."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml"
+          ],
+          "expected": "The final state is ALLOW with a timestamp from the last request. No interleaving leaves a stale outcome.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "48",
+      "ID": "PR-05",
+      "Area": "Permission records & export",
+      "Priority": "P1",
+      "Test case": "Marketing consent is never inferred from a tracking decision",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send tracking-only ALLOW and tracking-only DENY requests.",
+      "Expected result": "Email marketing consent is unchanged in both cases.",
+      "Coverage": "app: test_client_view.py",
+      "Source of truth / notes": "FORMS-34863's acceptance criterion: tracking-only requests change only tracking permissions.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "For ALLOW, DENY and repeated ALLOW, both tracking decisions persist while email marketing permission and list membership remain absent.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+          ],
+          "limitations": [],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "integration",
+              "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml"
+          ],
+          "expected": "Email marketing consent is unchanged in both cases.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "49",
+      "ID": "PR-06",
+      "Area": "Permission records & export",
+      "Priority": "P0",
+      "Test case": "Renderer-private choice tokens never reach a permission or property",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Submit a real consent block and inspect every written row, property and event.",
+      "Expected result": "The strings MARKETING, TRACKING and COMBINED appear nowhere. Only ALLOW/DENY per tracking type is stored.",
+      "Coverage": "Manual + code review",
+      "Source of truth / notes": "Explicit contract in fender's marketingTrackingConsent.ts; this is the backend half of that promise.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "crossrepo",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Frontend source excludes consent block choice tokens from composed profile fields and maps choices to SUBSCRIBED/UNSUBSCRIBED subscriptions. Backend maps these to ALLOW/DENY and KMS schema accepts only defined tracking enum values. All five isolated generated-schema/serialization checks pass. Full permission/property/event inspection following real block submission was not performed. Focused frontend execution passed 166/166; explicit selector test confirms checked and empty choice arrays never become composed fields.",
+          "scope": "Passing frontend mapping, submission and private-field-exclusion unit tests plus generated-protobuf serialization. Backend mapper inspected; adapter/consumer execution is covered separately by other case owners.",
+          "testNodeIds": [
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S2 for MARKETING_AND_OPEN_TRACKING with choices [\"MARKETING\",\"TRACKING\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S3 for MARKETING_AND_OPEN_TRACKING with choices [\"MARKETING\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S5 for MARKETING_AND_OPEN_TRACKING with choices [\"TRACKING\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S7 for MARKETING_AND_OPEN_TRACKING with choices []",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S1 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"MARKETING\",\"TRACKING\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S4 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"MARKETING\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S6 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"TRACKING\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S8 for MARKETING_AND_ALL_EMAIL_TRACKING with choices []",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S2 for OPEN_TRACKING_COMBINED_CONSENT with choices [\"COMBINED\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S7 for OPEN_TRACKING_COMBINED_CONSENT with choices []",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S1 for ALL_TRACKING_COMBINED_CONSENT with choices [\"COMBINED\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S8 for ALL_TRACKING_COMBINED_CONSENT with choices []",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S8 for MARKETING_AND_ALL_EMAIL_TRACKING with choices [\"COMBINED\"]",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.test.ts::buildMarketingTrackingConsentSubscriptions writes shape S7 for OPEN_TRACKING_COMBINED_CONSENT with choices [\"MARKETING\",\"TRACKING\"]",
+            "client/onsite/onsite-forms/src/ClientStore/tests/selectors/openFormVersions.test.ts::Test openFormVersion selectors excludes checked and empty renderer-private consent choices from fields",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends the live consent block value [\"TRACKING\"] as the recorded selection",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends the live consent block value [] as the recorded selection",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent keeps the legacy email marketing consent when no selection was recorded",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends shape S1 for {\"selectedModel\":\"MARKETING_AND_ALL_EMAIL_TRACKING\",\"choices\":[\"MARKETING\",\"TRACKING\"]} as the email subscription block",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends shape S2 for {\"selectedModel\":\"OPEN_TRACKING_COMBINED_CONSENT\",\"choices\":[\"COMBINED\"]} as the email subscription block",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends shape S8 for {\"selectedModel\":\"ALL_TRACKING_COMBINED_CONSENT\",\"choices\":[]} as the email subscription block",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent lets the consent block win over opt_in_promotional_email true",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent lets the consent block win over opt_in_promotional_email false",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends no email block when the submit carries no email",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent sends tracking on the email request only in the WA+SMS Smart Opt-In split",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent keeps the selection when the WA+SMS split is retried after a captcha",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop applies the recorded selection to a popup Shop submit",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop applies the recorded selection to the email request when Shop phone consent goes to a separate list",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop keeps the legacy email consent for a Shop submit on a form restored after a redirect",
+            "client/onsite/onsite-forms/src/Client/formActions/utils/submitToList.test.ts::submitToList marketing tracking consent Continue with Shop applies the recorded selection to a non-Shop submit on a restored form"
+          ],
+          "limitations": [
+            "No end-to-end submission through API/KMS consumer and database.",
+            "No complete persisted row, custom property, Identify or analytics event audit.",
+            "Backend arbitrary properties are copied; this is a renderer-generated token non-leak guarantee, not global rejection of these words in user-supplied properties."
+          ],
+          "sourceRefs": [
+            "fender/client/onsite/onsite-forms/src/Client/Components/FormComponents/MarketingTrackingConsentCheckbox/marketingTrackingConsent.ts:9",
+            "fender/client/onsite/onsite-forms/src/ClientStore/tests/selectors/openFormVersions.test.ts:202",
+            "fender/client/onsite/onsite-forms/src/Client/formActions/utils/marketingTrackingConsentSubscriptions.ts:34",
+            "app/src/learning/app/views/apis/v3/subscriptions/adapters/client.py:292",
+            "k-repo/python/klaviyo/kms/config/registry/subscriptions/data/subscription.proto:21"
+          ],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "crossrepo/source-review.json",
+            "crossrepo/schema-results.json",
+            "crossrepo/frontend-summary.json"
+          ],
+          "evidence": [
+            "evidence/crossrepo-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "50",
+      "ID": "FM-01",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P0",
+      "Test case": "A retryable unsubscribe failure retries the whole message",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Make unsubscribe_v2 raise a retryable exception during consumption.",
+      "Expected result": "The message is retried through attempt_retry.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "",
+      "status": "fail",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "fail",
+          "observation": "An escaping UnableToObtainLockException invokes the real retry helper/chariot_reject. However, an exhausted retryable workflow error is swallowed by modify_permissions's default configuration: attempted DENY returns normally, does not invoke attempt_retry or consumer error/drop counters, and the prior ALLOW persists.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerWorksheetCases::test_retryable_permission_error_rejects_message_and_counts_error",
+            ".TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry"
+          ],
+          "limitations": [
+            "Injected workflow failure represents exhausted internal retries. Actual broker redelivery timing and production DLQ behavior are not exercised."
+          ],
+          "sourceRefs": [
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52",
+            "src/learning/app/subscriptions/profile_permissions/profile_permissions_service.py:449",
+            "src/learning/app/onsite/kms/subscription_consumer.py:53"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-probes",
+              "name": "test_retryable_permission_error_rejects_message_and_counts_error",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": "behavior-risk",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "The message is retried through attempt_retry.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "51",
+      "ID": "FM-02",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P0",
+      "Test case": "A non-retryable unsubscribe failure DROPS the revocation",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Make unsubscribe_v2 raise a non-retryable exception.",
+      "Expected result": "DOCUMENT THE ACTUAL BEHAVIOUR. Today: a metric, a log, and the message is dropped - no retry, no dead-letter. A consent revocation is lost.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "OPEN ISSUE, compliance-sensitive. Peter raised it on #145870 and none of the three proposed fixes addresses it. Needs an explicit contract with SCM / email-platforms before rollout.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "A terminal permission workflow failure reports to Sentry but returns normally with no consumer retry or consumer error/drop counters; the prior persisted click ALLOW remains after attempted DENY. Separately, an unexpected ValueError escaping modify_permissions propagates, so not every nonretryable exception is silently swallowed.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerWorksheetCases::test_nonretryable_permission_error_propagates",
+            ".TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry"
+          ],
+          "limitations": [
+            "No live broker or DLQ assertion. Loss is demonstrated at the application boundary: denial not persisted, no attempt_retry, normal return for handled workflow failures."
+          ],
+          "sourceRefs": [
+            "src/learning/app/subscriptions/profile_permissions/profile_permissions_service.py:435",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-probes",
+              "name": "test_nonretryable_permission_error_propagates",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_failed_workflow_error_is_reported_without_message_retry",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": "behavior-risk",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "DOCUMENT THE ACTUAL BEHAVIOUR. Today: a metric, a log, and the message is dropped - no retry, no dead-letter. A consent revocation is lost.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "52",
+      "ID": "FM-03",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P0",
+      "Test case": "A retry does not double-subscribe",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Force a retryable unsubscribe failure AFTER subscribe() has already succeeded.",
+      "Expected result": "DOCUMENT THE ACTUAL BEHAVIOUR. The consumer calls subscribe() first, so a retry re-runs it and emits a second Subscribed to List.",
+      "Coverage": "app: test_subscription_consumer.py",
+      "Source of truth / notes": "OPEN ISSUE. subscribe() is deliberately NOT idempotent at the event layer - subscribe_processor.py notes flows and webhooks rely on the event firing even for an existing member - so a duplicate can re-trigger a welcome flow.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "An escaping tracking-boundary failure after successful marketing causes explicit replay to call subscribe again. In the real persisted scenario, list-event creation counts are [1,1] after the two attempts: membership remains and tracking ends correct, with no second list event. The old duplicate-event claim is not reproduced.",
+          "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerWorksheetCases::test_replayed_mixed_message_repeats_subscribe_before_permissions",
+            ".TestConsumerPermissionSequence::test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions"
+          ],
+          "limitations": [
+            "Event creation is observed at the outbound service boundary; publishing and downstream flow/webhook delivery are intercepted. This tests one SOI email-marketing shape, not all subscription variants."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:108",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:52"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-probes",
+              "name": "test_replayed_mixed_message_repeats_subscribe_before_permissions",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            },
+            {
+              "run": "integration",
+              "name": "test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+              "class": ".TestConsumerPermissionSequence",
+              "status": "pass"
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "consumer/integration.xml",
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "DOCUMENT THE ACTUAL BEHAVIOUR. The consumer calls subscribe() first, so a retry re-runs it and emits a second Subscribed to List.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "53",
+      "ID": "FM-04",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P1",
+      "Test case": "Consumer and sync paths order the two calls the same way",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Compare call order in the consumer against process_subscription_sync.",
+      "Expected result": "DOCUMENT THE DIVERGENCE. The sync path calls unsubscribe first; the consumer calls subscribe first.",
+      "Coverage": "Code review",
+      "Source of truth / notes": "Relevant to the #145870 decision: Matt's option 2 (move unsubscribe above subscribe) would make the consumer match what the sync path already does.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "consumer",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Current consumer executes subscribe before modify_permissions. Current sync adapter also calls subscribe before the shared tracking apply helper; the sheet's unsubscribe-first divergence is obsolete.",
+          "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+          "testNodeIds": [
+            ".TestConsumerWorksheetCases::test_replayed_mixed_message_repeats_subscribe_before_permissions"
+          ],
+          "limitations": [
+            "Consumer ordering is executed here; sync ordering is separately executed in adapter tests and source-reviewed for this case."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:133",
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:147",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:498",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:511"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit-probes",
+              "name": "test_replayed_mixed_message_repeats_subscribe_before_permissions",
+              "class": ".TestConsumerWorksheetCases",
+              "status": "pass"
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "consumer/unit-probes.xml"
+          ],
+          "expected": "DOCUMENT THE DIVERGENCE. The sync path calls unsubscribe first; the consumer calls subscribe first.",
+          "evidence": [
+            "evidence/consumer-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "54",
+      "ID": "FM-05",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P1",
+      "Test case": "A partially applied mixed request is recoverable",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Make subscribe() fail after unsubscribe_v2 succeeded, then retry the request.",
+      "Expected result": "Re-running produces the intended end state. Matt's argument is that a request never holds ALLOW and DENY for the same permission, so the retry is safe.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "Peter's atomicity question on #145743; thread resolved, but worth a test that pins the claim.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "The sheet's denial-before-marketing partial state cannot occur on this SHA. Injected marketing failure prevents any tracking write; explicit retry then sends both operations in one batch.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds"
+          ],
+          "limitations": [
+            "Executed boundary failure/retry, not persisted end-state or atomicity. The old unsubscribe-before-subscribe setup no longer exists. Consumer persistence/idempotency evidence is reported separately."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "Re-running produces the intended end state. Matt's argument is that a request never holds ALLOW and DENY for the same permission, so the retry is safe.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "55",
+      "ID": "FM-06",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P1",
+      "Test case": "A KMS publish failure carries tracking into the fallback",
+      "Preconditions": "KMSSubscribeKillSwitch off, so KMS is the publish path; sync fallback enabled",
+      "Steps": "Make the KMS publish raise.",
+      "Expected result": "The sync fallback runs and receives the same tracking operations.",
+      "Coverage": "app: test_client.py",
+      "Source of truth / notes": "Both call sites of _attempt_sync_subscription_based_on_hotsetting pass them.",
+      "status": "pass",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "pass",
+          "observation": "Injected KMS publish exception reaches real API fallback and preserves open ALLOW/click DENY in the sync batch.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_4_kms_failure_fallback"
+          ],
+          "limitations": [
+            "Queue/service boundaries were intercepted; no remote subscription or production account write occurred."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "http",
+              "name": "test_qa_branch_preserves_operations_and_gate_4_kms_failure_fallback",
+              "class": ".TestAdapterHTTP",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http.xml"
+          ],
+          "expected": "The sync fallback runs and receives the same tracking operations.",
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "56",
+      "ID": "FM-07",
+      "Area": "Failure modes & idempotency",
+      "Priority": "P2",
+      "Test case": "Request-building logic agrees across both paths",
+      "Preconditions": "Both paths exercised with identical input",
+      "Steps": "Compare the requests built by the sync adapter against build_tracking_consent_requests.",
+      "Expected result": "Identical ALLOW requests and DENY unsubscribe requests.",
+      "Coverage": "Code review + unit",
+      "Source of truth / notes": "#145870 adds the shared builder but does NOT refactor #145743's inline copy, so two code paths must stay in step. Flag on review.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "adapter",
+          "rawStatus": "pass",
+          "status": "changed",
+          "observation": "For four operation combinations, sync output exactly equals the shared builder's full BatchPermissionRequest, including metadata/profile data. Sync now directly reuses the shared builder.",
+          "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+          "testNodeIds": [
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+            "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]"
+          ],
+          "limitations": [
+            "Agreement is executed at the tracking write boundary; old DENY unsubscribe wording and inline-copy concern are obsolete."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:301",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:458",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:524",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:758",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/requests.py:37",
+            "src/learning/app/subscriptions/profile_permissions/tracking_consent/apply.py:21"
+          ],
+          "runtimeChecks": [
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            },
+            {
+              "run": "unit",
+              "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]",
+              "class": "",
+              "status": "pass",
+              "memoryGuardFailure": false
+            }
+          ],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "adapter/unit.xml"
+          ],
+          "expected": "Identical ALLOW requests and DENY unsubscribe requests.",
+          "nextSteps": [
+            "Update the case to the shared permission-batch contract on this SHA; use separate persisted-state tests for end-to-end retry guarantees."
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "57",
+      "ID": "SE-01",
+      "Area": "Security & abuse",
+      "Priority": "P0",
+      "Test case": "DENY is written before the bot and abuse checks run",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used; FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send a tracking DENY from a request the protections would flag.",
+      "Expected result": "DOCUMENT THE ACTUAL BEHAVIOUR. unsubscribe_v2 runs before subscribe(), and the protections live inside subscribe(), so the DENY lands while the ALLOW is dropped.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "OPEN ISSUE. Raised by Rohit on #145743; Matt asked Jon Parise whether is_suspicious_request / _is_subscription_request_blocked / rate limiting should mirror onto unsubscribe_v2. Jon approved the PR but never answered that thread.",
+      "status": "changed",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "fail",
+          "status": "changed",
+          "observation": "Protections now execute inside subscribe before the separate tracking batch. A real subscribe call whose protection decision returns blocked exits normally; the adapter then still applies either ALLOW or DENY. Both operations were separately exercised. A raised subscribe failure instead prevents tracking. The old denial-first ordering is obsolete, but the protection-return result does not gate tracking writes.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_tracking_applied_after_profile_protection_returns_block[allow]",
+            "test_tracking_applied_after_profile_protection_returns_block[deny]",
+            "test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds"
+          ],
+          "limitations": [
+            "Protection decision was injected, actual subscribe control flow executed, and final permission writes captured. This does not exercise a real bot classifier or prove persisted production impact.",
+            "Both ALLOW and DENY continue after a blocked subscribe result. This needs an explicit product/security decision; it is not limited to privacy-increasing revocation."
+          ],
+          "sourceRefs": [
+            "src/learning/app/subscriptions/services/profile_subscription_service.py:530",
+            "src/learning/app/views/apis/v3/subscriptions/adapters/client.py:454"
+          ],
+          "runtimeChecks": [],
+          "classification": "outdated-checklist",
+          "expectedMismatch": true,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json",
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "58",
+      "ID": "SE-02",
+      "Area": "Security & abuse",
+      "Priority": "P1",
+      "Test case": "A third party cannot flip tracking for an arbitrary email",
+      "Preconditions": "FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Craft a request with a known company_id and someone else's email.",
+      "Expected result": "ASSESS AND RECORD. Matt's position: the impact is bounded - marketing consent is untouched and it moves in the privacy-safe direction - and the bot checks are heuristics, not identity.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "Decide whether this is accepted risk before the rollout widens. It is a public client endpoint.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "The public onsite authentication accepts an anonymous request on the valid client host/path without credentials or an email ownership proof. Synthetic tracking API requests are accepted in the adapter checks. Marketing consent is not implicitly included in explicit tracking-only payloads. An arbitrary-email tracking operation is not prevented by identity authentication.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_public_onsite_auth_has_no_identity_ownership_proof"
+          ],
+          "limitations": [
+            "No request used another person's real email. No production exploit or end-to-end victim profile mutation attempted.",
+            "Both ALLOW and DENY are supported, so the risk cannot be described as only privacy-increasing DENY. Product/security owners must decide whether identity verification or other controls are required before wider rollout."
+          ],
+          "sourceRefs": [
+            "src/learning/app/views/apis/v3/client/authentication.py:88"
+          ],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "59",
+      "ID": "SE-03",
+      "Area": "Security & abuse",
+      "Priority": "P1",
+      "Test case": "Rate limiting applies to tracking-only requests",
+      "Preconditions": "FormsMarketingTrackingConsentHotSetting enabled for the company",
+      "Steps": "Send tracking-only requests above the endpoint's rate limit.",
+      "Expected result": "The limiter engages as it does for marketing subscribes.",
+      "Coverage": "Manual",
+      "Source of truth / notes": "Part of the same question to Jon.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Tracking-only current-revision requests returned 202, 202, then 429 at the configured burst limit; advancing the frozen window allowed another 202. Publish count stayed at two during throttling, then rose to three. Behavioral assertions passed, but the unchanged RSS growth guard failed at 337.9 MB against its 300 MB cap.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            ".TestTrackingThrottle::test_qa_extra_tracking_only_throttle_burst"
+          ],
+          "limitations": [
+            "Resource guard was not weakened or disabled; this is a partial result rather than an unqualified pass.",
+            "Local application throttle with controlled limit and clock; production edge/Kong enforcement was not exercised."
+          ],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": "memory-guard",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "adapter/http-rate.xml"
+          ],
+          "evidence": [
+            "evidence/adapter-assertions.json",
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "60",
+      "ID": "OB-01",
+      "Area": "Observability",
+      "Priority": "P0",
+      "Test case": "Rollout drops are visible",
+      "Preconditions": "FormsMarketingTrackingConsentHotSetting disabled for the company (the default)",
+      "Steps": "Send tracking requests and watch the dashboard.",
+      "Expected result": "forms.client_subscription_tracking_consent_drop_rollout_disabled increments. A non-zero rate before rollout means someone is already sending.",
+      "Coverage": "Dashboard",
+      "Source of truth / notes": "Dashboards are linked in the #145743 / #145765 / #145870 PR descriptions.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Local disabled-rollout execution emits the expected drop counter and event; enabled/absent-tracking negative controls emit neither.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_rollout_filter_emits_local_drop_signal[False-ops0]",
+            "test_absent_tracking_has_no_rollout_drop_signal"
+          ],
+          "limitations": [
+            "No deployed dashboard ingestion or alert delivery verified. Need a target environment and dashboard observation for full completion."
+          ],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "61",
+      "ID": "OB-02",
+      "Area": "Observability",
+      "Priority": "P0",
+      "Test case": "Consumer drops are visible and distinguishable",
+      "Preconditions": "#145870 merged, so the KMS consumer applies tracking fields",
+      "Steps": "Trigger a no-email drop and an unsubscribe-error drop.",
+      "Expected result": "The _no_email counter and the error counter move independently, so a compliance-relevant drop is not hidden among benign ones.",
+      "Coverage": "Dashboard",
+      "Source of truth / notes": "The unsubscribe-error counter is the alarm for FM-02. It should be alerted on, not just graphed.",
+      "status": "fail",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "fail",
+          "status": "fail",
+          "observation": "Real permission-service fault probes confirmed both terminal and exhausted-retryable DENY failures leave the prior stored ALLOW unchanged. Sentry capture fires, but neither consumer StatsD nor retry StatsD increments and no consumer retry is requested. The expected distinguishable consumer error counter therefore does not cover these failed revocations. The no-email drop counter is separately verified by the consumer tests.",
+          "scope": "Local MySQL permission persistence through real consumer and permission service. Workflow exception injected at execute boundary; Sentry/consumer/retry metrics captured.",
+          "testNodeIds": [
+            "TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+            "TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry"
+          ],
+          "limitations": [
+            "This proves a missing consumer error signal for these injected workflow failures; Sentry reporting remains present.",
+            "No deployed dashboard, Sentry delivery, alert routing or queue DLQ was exercised."
+          ],
+          "sourceRefs": [
+            "src/learning/app/onsite/kms/subscription_base_consumer.py:112",
+            "src/learning/app/subscriptions/profile_permissions/profile_permissions_service.py:435"
+          ],
+          "runtimeChecks": [],
+          "classification": "missing-failure-signal",
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "consumer/integration.xml"
+          ],
+          "followUp": "Ensure failed revocations are surfaced through a monitored signal and decide retry/recovery semantics; verify the deployed alert after any fix.",
+          "evidence": [
+            "evidence/consumer-assertions.json",
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "62",
+      "ID": "OB-03",
+      "Area": "Observability",
+      "Priority": "P1",
+      "Test case": "Sync fallback usage is visible",
+      "Preconditions": "KMSSubscribeKillSwitch ON, so the synchronous path is used",
+      "Steps": "Force the fallback.",
+      "Expected result": "SyncSubscription log and the forms sync-subscribe metric both fire.",
+      "Coverage": "Dashboard",
+      "Source of truth / notes": "Matters because the sync path is the ungated one - see SY-09.",
+      "status": "partial",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "partial",
+          "status": "partial",
+          "observation": "Enabled sync fallback emits SyncSubscription and the forms sync-subscribe increment, preserving both operations. Disabled fallback emits DropSyncSubscription and does not call sync or increment the usage counter.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [
+            "test_sync_fallback_signal_and_operation_preservation[True]",
+            "test_sync_fallback_signal_and_operation_preservation[False]"
+          ],
+          "limitations": [
+            "Emission verified through captured logger/StatsD boundaries. Deployed dashboard delivery was not verified. The checklist note calling sync ungated is outdated; adapter HTTP checks show rollout filtering before fallback."
+          ],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    },
+    {
+      "": "63",
+      "ID": "OB-04",
+      "Area": "Observability",
+      "Priority": "P1",
+      "Test case": "Canary on an ondemand before widening the rollout",
+      "Preconditions": "#145870 merged; an ondemand instance running the KMS consumer",
+      "Steps": "Run the consumer against real traffic for one allow-listed company and watch the drop and error counters.",
+      "Expected result": "Tracking permissions appear for real submissions, with no unexplained drops.",
+      "Coverage": "Canary",
+      "Source of truth / notes": "Per the smoke-test-plan skill; the consumer is an async workload so a soak is the right check.",
+      "status": "blocked",
+      "observations": [
+        {
+          "owner": "controls",
+          "rawStatus": "blocked",
+          "status": "blocked",
+          "observation": "Live-traffic ondemand canary/soak was not run. All executions used synthetic local data and intercepted external write boundaries.",
+          "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+          "testNodeIds": [],
+          "limitations": [
+            "Requires an identified ondemand environment with consumer deployed, an approved test company/traffic source, and access to relevant metrics/alerts. A live traffic soak would exceed the current no-real-API-call scope."
+          ],
+          "sourceRefs": [],
+          "runtimeChecks": [],
+          "classification": null,
+          "expectedMismatch": false,
+          "sourceEvidence": [
+            "controls/controls.xml"
+          ],
+          "evidence": [
+            "evidence/controls-assertions.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-06T00:24:55.374675+00:00",
+  "sourceSheet": "https://docs.google.com/spreadsheets/d/1Sm1uGCZF1pEYF7u7Ik7IcX7BkguBqVryOzUrfO1kDjY/edit?gid=1366944195#gid=1366944195",
+  "repositories": {
+    "app": {
+      "sha": "0437a84a74a1f48c7ab9c500a25676862b1da729",
+      "ref": "origin/master",
+      "subject": "CAD-1027: Remove from Lists mapping for DWH Import (#149907)"
+    },
+    "fender": {
+      "sha": "5c174384ca8ade15c3e5b3b4e6b25cb7df55ca63",
+      "ref": "origin/master",
+      "subject": "Make the SMS and RCS campaign previews look like the messaging apps (#72087)"
+    },
+    "k-repo": {
+      "sha": "cbb7617458f5a345a733e99a30ffe88b0257de81",
+      "ref": "origin/main",
+      "subject": "feat(applications): KRepoLayout and the k-repo scaffold binary over the shipped CLI (#75631)"
+    }
+  },
+  "scope": "Fresh fetched upstream default branches in detached isolated worktrees. Main checkout branches and uncommitted changes preserved. Synthetic local data; external subscription, queue publishing and outbound integration calls intercepted. No live customer traffic or remote subscription API calls.",
+  "checklistCases": 64,
+  "sourceCheckoutsCleanAfterTests": true,
+  "environmentRecovery": "Started existing local services and removed only a verified stale MySQL socket and lock. No database schema migrations or resets performed.",
+  "sourceUpdateStrategy": "Fetched upstream default branches, then used isolated detached worktrees to preserve active branches and local edits."
+}

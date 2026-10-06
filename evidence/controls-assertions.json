@@ -1,0 +1,284 @@
+{
+  "owner": "controls",
+  "scope": "Curated assertion names and statuses only. Each execution is separate; retries are not added together as unique tests.",
+  "runs": [
+    {
+      "artifact": "controls-initial.xml",
+      "testCount": 11,
+      "counts": {
+        "pass": 10,
+        "fail": 1
+      },
+      "tests": [
+        {
+          "id": "::test_rollout_defaults_off",
+          "status": "pass"
+        },
+        {
+          "id": "::test_allowlist_requires_global_switch",
+          "status": "pass"
+        },
+        {
+          "id": "::test_disallow_overrides_allowlist_and_full_percentage",
+          "status": "pass"
+        },
+        {
+          "id": "::test_ten_percent_stable_real_sharding",
+          "status": "pass"
+        },
+        {
+          "id": "::test_rollout_filter_emits_local_drop_signal[False-ops0]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_rollout_filter_emits_local_drop_signal[True-ops1]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_absent_tracking_has_no_rollout_drop_signal",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_fallback_signal_and_operation_preservation[False]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_fallback_signal_and_operation_preservation[True]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_tracking_deny_applied_after_profile_protection_returns_block",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": "::test_public_onsite_auth_has_no_identity_ownership_proof",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "artifact": "controls.xml",
+      "testCount": 12,
+      "counts": {
+        "pass": 12
+      },
+      "tests": [
+        {
+          "id": "::test_rollout_defaults_off",
+          "status": "pass"
+        },
+        {
+          "id": "::test_allowlist_requires_global_switch",
+          "status": "pass"
+        },
+        {
+          "id": "::test_disallow_overrides_allowlist_and_full_percentage",
+          "status": "pass"
+        },
+        {
+          "id": "::test_ten_percent_stable_real_sharding",
+          "status": "pass"
+        },
+        {
+          "id": "::test_rollout_filter_emits_local_drop_signal[False-ops0]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_rollout_filter_emits_local_drop_signal[True-ops1]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_absent_tracking_has_no_rollout_drop_signal",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_fallback_signal_and_operation_preservation[False]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_fallback_signal_and_operation_preservation[True]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_tracking_applied_after_profile_protection_returns_block[allow]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_tracking_applied_after_profile_protection_returns_block[deny]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_public_onsite_auth_has_no_identity_ownership_proof",
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "frontendAssertions": [],
+  "caseAssertions": [
+    {
+      "id": "AC-10",
+      "recordedStatus": "partial",
+      "testNodeIds": [],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "OpenAPI 3.0.2 generation succeeded for revision 2025-01-15. Generated schema includes optional open_tracking/click_tracking and SUBSCRIBED/UNSUBSCRIBED enum. Latest app commit overall CI status is success."
+    },
+    {
+      "id": "RG-01",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "test_rollout_defaults_off"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "All four defaults are off/empty/zero. None of 50 synthetic companies is enabled."
+    },
+    {
+      "id": "RG-02",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "test_allowlist_requires_global_switch"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Allowlisting alone does not enable tracking: the global switch is an additional required master enable. With global=true and percentage=0, the allowlisted company is enabled and the unlisted company remains off."
+    },
+    {
+      "id": "RG-03",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "test_disallow_overrides_allowlist_and_full_percentage"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Disallow overrides simultaneous allowlist inclusion and 100% rollout."
+    },
+    {
+      "id": "RG-04",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "test_ten_percent_stable_real_sharding"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "With percentage=10 and global=false, none is enabled. With global=true, real hashing selects 1,018 of 10,000 synthetic company IDs (10.18%); membership is identical on repeat. Checklist omits the global prerequisite."
+    },
+    {
+      "id": "RG-05",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "test_rollout_filter_emits_local_drop_signal[False-ops0]",
+        "test_rollout_filter_emits_local_drop_signal[True-ops1]",
+        "test_absent_tracking_has_no_rollout_drop_signal"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Disabled rollout returns no tracking operations and emits exactly one forms.client_subscription_tracking_consent_drop_rollout_disabled increment and ClientSubscription.TrackingConsentDrop event. Enabled and absent-tracking cases emit neither."
+    },
+    {
+      "id": "SE-01",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "test_tracking_applied_after_profile_protection_returns_block[allow]",
+        "test_tracking_applied_after_profile_protection_returns_block[deny]",
+        "test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Protections now execute inside subscribe before the separate tracking batch. A real subscribe call whose protection decision returns blocked exits normally; the adapter then still applies either ALLOW or DENY. Both operations were separately exercised. A raised subscribe failure instead prevents tracking. The old denial-first ordering is obsolete, but the protection-return result does not gate tracking writes."
+    },
+    {
+      "id": "SE-02",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        "test_public_onsite_auth_has_no_identity_ownership_proof"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "The public onsite authentication accepts an anonymous request on the valid client host/path without credentials or an email ownership proof. Synthetic tracking API requests are accepted in the adapter checks. Marketing consent is not implicitly included in explicit tracking-only payloads. An arbitrary-email tracking operation is not prevented by identity authentication."
+    },
+    {
+      "id": "SE-03",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        ".TestTrackingThrottle::test_qa_extra_tracking_only_throttle_burst"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Tracking-only current-revision requests returned 202, 202, then 429 at the configured burst limit; advancing the frozen window allowed another 202. Publish count stayed at two during throttling, then rose to three. Behavioral assertions passed, but the unchanged RSS growth guard failed at 337.9 MB against its 300 MB cap."
+    },
+    {
+      "id": "OB-01",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        "test_rollout_filter_emits_local_drop_signal[False-ops0]",
+        "test_absent_tracking_has_no_rollout_drop_signal"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Local disabled-rollout execution emits the expected drop counter and event; enabled/absent-tracking negative controls emit neither."
+    },
+    {
+      "id": "OB-02",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+        "TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry"
+      ],
+      "runtimeChecks": [],
+      "scope": "Local MySQL permission persistence through real consumer and permission service. Workflow exception injected at execute boundary; Sentry/consumer/retry metrics captured.",
+      "observation": "Real permission-service fault probes confirmed both terminal and exhausted-retryable DENY failures leave the prior stored ALLOW unchanged. Sentry capture fires, but neither consumer StatsD nor retry StatsD increments and no consumer retry is requested. The expected distinguishable consumer error counter therefore does not cover these failed revocations. The no-email drop counter is separately verified by the consumer tests."
+    },
+    {
+      "id": "OB-03",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        "test_sync_fallback_signal_and_operation_preservation[True]",
+        "test_sync_fallback_signal_and_operation_preservation[False]"
+      ],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Enabled sync fallback emits SyncSubscription and the forms sync-subscribe increment, preserving both operations. Disabled fallback emits DropSyncSubscription and does not call sync or increment the usage counter."
+    },
+    {
+      "id": "OB-04",
+      "recordedStatus": "blocked",
+      "testNodeIds": [],
+      "runtimeChecks": [],
+      "scope": "Latest app isolated worktree; synthetic local execution, real Redis rollout settings in a disposable key namespace. Mocked signal/external write boundaries are stated explicitly.",
+      "observation": "Live-traffic ondemand canary/soak was not run. All executions used synthetic local data and intercepted external write boundaries."
+    }
+  ],
+  "controlSummaries": {
+    "rollout-sample.json": {
+      "sampleSize": 10000,
+      "selected": 1018,
+      "percentage": 10.18,
+      "stable": true,
+      "globalSwitchRequired": true
+    },
+    "openapi-summary.json": {
+      "generationExitCode": 0,
+      "revision": "2025-01-15",
+      "openapiVersion": "3.0.2",
+      "schemaSha256": "d2acc991ff148a3c2507a590d368399868bfd31adb8b7f06b3a2817a9835aaea",
+      "trackingEnum": [
+        "SUBSCRIBED",
+        "UNSUBSCRIBED"
+      ],
+      "emailSubscriptionFields": [
+        "marketing",
+        "open_tracking",
+        "click_tracking"
+      ],
+      "ciCommitStatus": "success",
+      "ciBuild": "https://buildkite.com/klaviyo-ci/app/builds/442265",
+      "limitations": [
+        "Generation produced unrelated schema introspection warnings.",
+        "Overall commit CI success does not establish a separate OAS breaking-diff result; no baseline comparison or generate-oas child result was verified."
+      ]
+    }
+  }
+}

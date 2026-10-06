@@ -1,0 +1,1497 @@
+{
+  "owner": "adapter",
+  "scope": "Curated assertion names and statuses only. Each execution is separate; retries are not added together as unique tests.",
+  "runs": [
+    {
+      "artifact": "http-extra.xml",
+      "testCount": 2,
+      "counts": {
+        "fail": 2
+      },
+      "tests": [
+        {
+          "id": ".TestMarketingPersistence::test_qa_extra_marketing_only_persists_no_tracking",
+          "status": "fail",
+          "failureReason": "Failed: Test exceeded RSS growth limit:\n  RSS before: 1,413,728 KB (1380.6 MB)\n  RSS after:  1,779,536 KB (1737.8 MB)\n  Growth:     365,808 KB (357.2 MB)\n  Limit:      307,200 KB (300.0 MB)\n  Exceeded by: 58,608 KB (57.2 MB)",
+          "memoryGuardFailure": true
+        },
+        {
+          "id": ".TestTrackingThrottle::test_qa_extra_tracking_only_throttle_burst",
+          "status": "fail",
+          "failureType": "assertion failure"
+        }
+      ]
+    },
+    {
+      "artifact": "http-initial.xml",
+      "testCount": 29,
+      "counts": {
+        "fail": 29
+      },
+      "tests": [
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_0_mixed",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_1_sync",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_2_sync_gate_off",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_3_drop_sync",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_4_kms_failure_fallback",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_email_success_soi",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_empty_subscriptions_block_keeps_legacy_publish_0_rollout_disabled",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_empty_subscriptions_block_keeps_legacy_publish_1_rollout_enabled",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_preserves_marketing_when_tracking_rollout_is_disabled",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_suppresses_tracking_publish_when_rollout_is_disabled",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_0_empty",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_1_unknown_key",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_2_invalid_consent",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_0_original",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_1_oct24",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_2_current_missing_subscriptions",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_rollout_drop_logs_and_counts_once",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_0_open_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_1_open_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_2_click_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_3_click_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+          "status": "fail",
+          "failureType": "assertion failure"
+        }
+      ]
+    },
+    {
+      "artifact": "http-rate.xml",
+      "testCount": 1,
+      "counts": {
+        "fail": 1
+      },
+      "tests": [
+        {
+          "id": ".TestTrackingThrottle::test_qa_extra_tracking_only_throttle_burst",
+          "status": "fail",
+          "failureReason": "Failed: Test exceeded RSS growth limit:\n  RSS before: 1,404,592 KB (1371.7 MB)\n  RSS after:  1,750,624 KB (1709.6 MB)\n  Growth:     346,032 KB (337.9 MB)\n  Limit:      307,200 KB (300.0 MB)\n  Exceeded by: 38,832 KB (37.9 MB)",
+          "memoryGuardFailure": true
+        }
+      ]
+    },
+    {
+      "artifact": "http.xml",
+      "testCount": 29,
+      "counts": {
+        "fail": 3,
+        "pass": 26
+      },
+      "tests": [
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_0_mixed",
+          "status": "fail",
+          "failureReason": "Failed: Test exceeded RSS growth limit:\n  RSS before: 1,396,976 KB (1364.2 MB)\n  RSS after:  1,733,472 KB (1692.8 MB)\n  Growth:     336,496 KB (328.6 MB)\n  Limit:      307,200 KB (300.0 MB)\n  Exceeded by: 29,296 KB (28.6 MB)",
+          "memoryGuardFailure": true
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_1_sync",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_2_sync_gate_off",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_3_drop_sync",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_4_kms_failure_fallback",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_email_success_soi",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_empty_subscriptions_block_keeps_legacy_publish_0_rollout_disabled",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_empty_subscriptions_block_keeps_legacy_publish_1_rollout_enabled",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_preserves_marketing_when_tracking_rollout_is_disabled",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_existing_test_create_suppresses_tracking_publish_when_rollout_is_disabled",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_0_empty",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_1_unknown_key",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_2_invalid_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_0_original",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_1_oct24",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_2_current_missing_subscriptions",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterHTTP::test_qa_rollout_drop_logs_and_counts_once",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_0_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_1_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_2_click_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_accepts_tracking_consent_3_click_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "artifact": "unit-initial.xml",
+      "testCount": 52,
+      "counts": {
+        "pass": 50,
+        "fail": 2
+      },
+      "tests": [
+        {
+          "id": "::test_client_tracking_consent_parameters_accept_both_operations[ClientTrackingConsentStatus.SUBSCRIBED]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_tracking_consent_parameters_accept_both_operations[ClientTrackingConsentStatus.UNSUBSCRIBED]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_profile_tracking_consent_without_email_raises[open_tracking]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_profile_tracking_consent_without_email_raises[click_tracking]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_profile_email_marketing_without_email_remains_valid",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_email_subscription_parameters_reject_empty_email",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dtos_match_shared_field_names[ClientSubscriptionChannels-SubscriptionChannels]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dtos_match_shared_field_names[ClientEmailSubscriptionParameters-EmailSubscriptionParameters]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-sms-attributes0]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-whatsapp-attributes1]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-push-attributes2]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-email-attributes3]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientEmailSubscriptionParameters-EmailSubscriptionParameters-marketing-attributes4]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_extract_tracking_consent_operations",
+          "status": "pass"
+        },
+        {
+          "id": "::test_filter_tracking_operations_for_rollout[enabled_preserves_operations]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_filter_tracking_operations_for_rollout[disabled_suppresses_operations]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_filter_tracking_operations_skips_rollout_lookup_without_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[allow_open_deny_click]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[deny_open_allow_click]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[allow_both]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[deny_both]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[open_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[click_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_disabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_enabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_disabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_enabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_dropped_tracking_request_does_not_infer_marketing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_rejects_invalid_tracking_operation_before_publishing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_combines_marketing_and_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_shop_pay_also_publishes_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_send_subscription_serializes_tracking_consent_operation",
+          "status": "pass"
+        },
+        {
+          "id": "::test_send_subscription_omits_tracking_operation_for_marketing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_tracking_only_publishes_one_message",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_tracking_denials_keep_marketing_channels_empty",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_rejects_invalid_tracking_before_side_effects",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_routes_mixed_marketing_and_tracking_operations[open_allow_click_deny]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_routes_mixed_marketing_and_tracking_operations[open_deny_click_allow]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_closed_company_writes_no_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_push_only_keeps_marketing_channels_empty",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_no_email_skips_tracking_preserves_marketing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds",
+          "status": "pass"
+        },
+        {
+          "id": "::test_kms_actual_proto_contains_requested_operations[mixed_tracking_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_kms_actual_proto_contains_requested_operations[click_deny_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_kms_actual_proto_contains_requested_operations[marketing_plus_both]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_shop_actual_proto_count_and_tracking_separation[legacy_shop]",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": "::test_shop_actual_proto_count_and_tracking_separation[shop_with_tracking]",
+          "status": "fail",
+          "failureType": "assertion failure"
+        }
+      ]
+    },
+    {
+      "artifact": "unit.xml",
+      "testCount": 52,
+      "counts": {
+        "pass": 52
+      },
+      "tests": [
+        {
+          "id": "::test_client_tracking_consent_parameters_accept_both_operations[ClientTrackingConsentStatus.SUBSCRIBED]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_tracking_consent_parameters_accept_both_operations[ClientTrackingConsentStatus.UNSUBSCRIBED]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_profile_tracking_consent_without_email_raises[open_tracking]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_profile_tracking_consent_without_email_raises[click_tracking]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_profile_email_marketing_without_email_remains_valid",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_email_subscription_parameters_reject_empty_email",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dtos_match_shared_field_names[ClientSubscriptionChannels-SubscriptionChannels]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dtos_match_shared_field_names[ClientEmailSubscriptionParameters-EmailSubscriptionParameters]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-sms-attributes0]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-whatsapp-attributes1]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-push-attributes2]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientSubscriptionChannels-SubscriptionChannels-email-attributes3]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_client_dto_copied_fields_match_shared_definitions[ClientEmailSubscriptionParameters-EmailSubscriptionParameters-marketing-attributes4]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_extract_tracking_consent_operations",
+          "status": "pass"
+        },
+        {
+          "id": "::test_filter_tracking_operations_for_rollout[enabled_preserves_operations]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_filter_tracking_operations_for_rollout[disabled_suppresses_operations]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_filter_tracking_operations_skips_rollout_lookup_without_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[allow_open_deny_click]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[deny_open_allow_click]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[allow_both]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[deny_both]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[open_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_groups_tracking_by_operation[click_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_disabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_enabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_disabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_enabled]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_dropped_tracking_request_does_not_infer_marketing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_rejects_invalid_tracking_operation_before_publishing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_combines_marketing_and_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_shop_pay_also_publishes_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_send_subscription_serializes_tracking_consent_operation",
+          "status": "pass"
+        },
+        {
+          "id": "::test_send_subscription_omits_tracking_operation_for_marketing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_tracking_only_publishes_one_message",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_tracking_denials_keep_marketing_channels_empty",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_rejects_invalid_tracking_before_side_effects",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_routes_mixed_marketing_and_tracking_operations[open_allow_click_deny]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_routes_mixed_marketing_and_tracking_operations[open_deny_click_allow]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_closed_company_writes_no_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "::test_process_subscription_sync_push_only_keeps_marketing_channels_empty",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_no_email_skips_tracking_preserves_marketing",
+          "status": "pass"
+        },
+        {
+          "id": "::test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds",
+          "status": "pass"
+        },
+        {
+          "id": "::test_kms_actual_proto_contains_requested_operations[mixed_tracking_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_kms_actual_proto_contains_requested_operations[click_deny_only]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_kms_actual_proto_contains_requested_operations[marketing_plus_both]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_shop_actual_proto_count_and_tracking_separation[legacy_shop]",
+          "status": "pass"
+        },
+        {
+          "id": "::test_shop_actual_proto_count_and_tracking_separation[shop_with_tracking]",
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "frontendAssertions": [],
+  "caseAssertions": [
+    {
+      "id": "AC-01",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Current-revision HTTP accepts open tracking SUBSCRIBED with 202 and captures ALLOW, without marketing flags."
+    },
+    {
+      "id": "AC-02",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_0_open_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_1_open_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_2_click_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_accepts_tracking_consent_3_click_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Current-revision HTTP accepts click tracking UNSUBSCRIBED with 202 and captures DENY, without marketing flags."
+    },
+    {
+      "id": "AC-03",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+        ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_0_mixed"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_branch_preserves_operations_and_gate_0_mixed",
+          "class": ".TestAdapterHTTP",
+          "status": "fail",
+          "memoryGuardFailure": true
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Mixed open ALLOW/click DENY is accepted; both operations survive KMS serialization and the sync batch. Current sync uses one shared permission batch."
+    },
+    {
+      "id": "AC-04",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+        ".TestAdapterHTTP::test_qa_existing_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+        ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+        ".TestAdapterBetaHTTP::test_qa_beta_test_create_rejects_tracking_consent_without_email_1_click_tracking"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_beta_test_create_rejects_tracking_consent_without_email_0_open_tracking",
+          "class": ".TestAdapterBetaHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_beta_test_create_rejects_tracking_consent_without_email_1_click_tracking",
+          "class": ".TestAdapterBetaHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Current and beta requests without email return 400 with the exact email-required message, invalid code, and email JSON pointer; publish is not called."
+    },
+    {
+      "id": "AC-05",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_0_empty",
+        ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_1_unknown_key"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_invalid_email_consent_returns_400_0_empty",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_invalid_email_consent_returns_400_1_unknown_key",
+          "class": ".TestAdapterHTTP",
+          "status": "fail",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Both inputs reject with HTTP 400 invalid. Empty email matches the sheet message. Unknown-only input instead reports: 'unrelated' is not a valid field for the resource 'email_subscription_parameters'. Thus the exact-message assertion fails for the unknown-key variant."
+    },
+    {
+      "id": "AC-06",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_invalid_email_consent_returns_400_2_invalid_consent"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_invalid_email_consent_returns_400_2_invalid_consent",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "MAYBE is rejected at the DTO boundary as a 400 JSON:API invalid error; no publish occurs."
+    },
+    {
+      "id": "AC-07",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        "::test_send_subscription_omits_tracking_operation_for_marketing",
+        ".TestMarketingPersistence::test_qa_extra_marketing_only_persists_no_tracking"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_send_subscription_omits_tracking_operation_for_marketing",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http-extra",
+          "name": "test_qa_extra_marketing_only_persists_no_tracking",
+          "class": ".TestMarketingPersistence",
+          "status": "fail",
+          "memoryGuardFailure": true
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Focused local HTTP/consumer regression verifies real marketing consent and list membership, with no open/click tracking permission rows. The serialized marketing message also has neither tracking field."
+    },
+    {
+      "id": "AC-08",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_disabled]",
+        "::test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_enabled]",
+        "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_disabled]",
+        "::test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_enabled]",
+        ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_2_current_missing_subscriptions"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_disabled]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[empty_explicit_block-rollout_enabled]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_disabled]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_process_subscription_publishes_legacy_message_without_tracking_keys[rejected_sms_consent-rollout_enabled]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_legacy_converters_preserve_marketing_2_current_missing_subscriptions",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Missing subscriptions and resolved empty consent retain legacy marketing publish flags; tracking fields remain absent."
+    },
+    {
+      "id": "AC-09",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_0_original",
+        ".TestAdapterHTTP::test_qa_legacy_converters_preserve_marketing_1_oct24"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_legacy_converters_preserve_marketing_0_original",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_legacy_converters_preserve_marketing_1_oct24",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Both deprecated API revision payloads traverse real conversion and return 202 with legacy marketing-only publication."
+    },
+    {
+      "id": "SY-01",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "ALLOW is now a request in modify_permissions after marketing subscribe; it is not passed to subscribe as consent_requests."
+    },
+    {
+      "id": "SY-02",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "DENY is now a request in modify_permissions; unsubscribe_v2 is never invoked."
+    },
+    {
+      "id": "SY-03",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Mixed ALLOW/DENY is one tracking batch after the marketing call; marketing channel map is preserved."
+    },
+    {
+      "id": "SY-04",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Observed order is marketing subscribe then tracking modify_permissions. There is no unsubscribe_v2 step."
+    },
+    {
+      "id": "SY-05",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Full-object equality confirms open and click requests carry the expected subscribe method and client IP."
+    },
+    {
+      "id": "SY-06",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_sync_no_email_skips_tracking_preserves_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_no_email_skips_tracking_preserves_marketing",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "No-email sync input skips all tracking writes and preserves the marketing channel map."
+    },
+    {
+      "id": "SY-07",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_0_mixed"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_branch_preserves_operations_and_gate_0_mixed",
+          "class": ".TestAdapterHTTP",
+          "status": "fail",
+          "memoryGuardFailure": true
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "KMS-enabled API request emits its tracking message; sync subscribe/modify are not called."
+    },
+    {
+      "id": "SY-08",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_3_drop_sync"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_branch_preserves_operations_and_gate_3_drop_sync",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "KMS disabled and sync fallback disabled returns 202 without subscription or tracking writes and logs DropSyncSubscription."
+    },
+    {
+      "id": "SY-09",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_2_sync_gate_off"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_branch_preserves_operations_and_gate_2_sync_gate_off",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Actual HTTP behavior: rollout disabled drops tracking before sync dispatch, so no tracking write occurs. The sheet's sync gate concern is resolved on this SHA."
+    },
+    {
+      "id": "KP-01",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_kms_actual_proto_contains_requested_operations[mixed_tracking_only]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_kms_actual_proto_contains_requested_operations[mixed_tracking_only]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Real Subscription protobuf capture contains both open ALLOW and click DENY."
+    },
+    {
+      "id": "KP-02",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_send_subscription_omits_tracking_operation_for_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_send_subscription_omits_tracking_operation_for_marketing",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Marketing-only protobuf reports HasField false for both tracking fields."
+    },
+    {
+      "id": "KP-03",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_process_subscription_rejects_invalid_tracking_operation_before_publishing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_process_subscription_rejects_invalid_tracking_operation_before_publishing",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Unsupported PROFILE_MERGE operation raises ValueError before any queue publish."
+    },
+    {
+      "id": "KP-04",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_kms_actual_proto_contains_requested_operations[click_deny_only]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_kms_actual_proto_contains_requested_operations[click_deny_only]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Tracking-only click DENY emits exactly one protobuf with both marketing flags false and empty subscription_type."
+    },
+    {
+      "id": "KP-05",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_process_subscription_dropped_tracking_request_does_not_infer_marketing",
+        ".TestAdapterHTTP::test_qa_existing_test_create_suppresses_tracking_publish_when_rollout_is_disabled"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_process_subscription_dropped_tracking_request_does_not_infer_marketing",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "http",
+          "name": "test_qa_existing_test_create_suppresses_tracking_publish_when_rollout_is_disabled",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Rollout-off tracking-only request returns 202 but publishes nothing and does not infer marketing."
+    },
+    {
+      "id": "KP-06",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_kms_actual_proto_contains_requested_operations[marketing_plus_both]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_kms_actual_proto_contains_requested_operations[marketing_plus_both]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "One protobuf carries email marketing and both tracking decisions."
+    },
+    {
+      "id": "KP-07",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_rollout_drop_logs_and_counts_once"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_rollout_drop_logs_and_counts_once",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Rollout-off mixed marketing/tracking request publishes marketing once without tracking fields, logs TrackingConsentDrop, and increments the drop counter."
+    },
+    {
+      "id": "SH-01",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_shop_actual_proto_count_and_tracking_separation[shop_with_tracking]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_shop_actual_proto_count_and_tracking_separation[shop_with_tracking]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Shop request produces exactly one ShopifySubscription for marketing and one tracking-only Subscription with both operations and all marketing flags false."
+    },
+    {
+      "id": "SH-02",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_shop_actual_proto_count_and_tracking_separation[legacy_shop]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_shop_actual_proto_count_and_tracking_separation[legacy_shop]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Shop request without tracking produces exactly one ShopifySubscription and no extra Subscription."
+    },
+    {
+      "id": "FM-05",
+      "recordedStatus": "partial",
+      "testNodeIds": [
+        "::test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_marketing_failure_prevents_tracking_then_explicit_retry_succeeds",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "The sheet's denial-before-marketing partial state cannot occur on this SHA. Injected marketing failure prevents any tracking write; explicit retry then sends both operations in one batch."
+    },
+    {
+      "id": "FM-06",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestAdapterHTTP::test_qa_branch_preserves_operations_and_gate_4_kms_failure_fallback"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "http",
+          "name": "test_qa_branch_preserves_operations_and_gate_4_kms_failure_fallback",
+          "class": ".TestAdapterHTTP",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "Injected KMS publish exception reaches real API fallback and preserves open ALLOW/click DENY in the sync batch."
+    },
+    {
+      "id": "FM-07",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+        "::test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[open_allow]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[click_deny]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[mixed]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        },
+        {
+          "run": "unit",
+          "name": "test_sync_batch_matches_shared_builder_and_marketing_precedes_tracking[inverse]",
+          "class": "",
+          "status": "pass",
+          "memoryGuardFailure": false
+        }
+      ],
+      "scope": "Executed local synthetic tests against app 0437a84a74a1; isolated adapter/API contract unless persistence is explicitly stated.",
+      "observation": "For four operation combinations, sync output exactly equals the shared builder's full BatchPermissionRequest, including metadata/profile data. Sync now directly reuses the shared builder."
+    }
+  ]
+}

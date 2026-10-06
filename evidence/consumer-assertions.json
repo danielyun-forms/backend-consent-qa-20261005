@@ -1,0 +1,1214 @@
+{
+  "owner": "consumer",
+  "scope": "Curated assertion names and statuses only. Each execution is separate; retries are not added together as unique tests.",
+  "runs": [
+    {
+      "artifact": "integration-initial.xml",
+      "testCount": 55,
+      "counts": {
+        "pass": 25,
+        "fail": 30
+      },
+      "tests": [
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_emits_consent_granted_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_grants_open_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_invalid_email_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_no_ingest_access_exits_without_writing_permission",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_emits_consent_revoked_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_revokes_open_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_no_record_is_implicitly_unreachable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_emits_consent_granted_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_grants_click_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_invalid_email_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_no_ingest_access_exits_without_writing_permission",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_emits_consent_revoked_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_revokes_click_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_no_record_is_implicitly_unreachable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_does_process_a_retry",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_doesnt_process_old_messages",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_invalid_on_message_batch",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_no_channels_included",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_with_form_data_0",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_with_form_data_1",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_without_form_data_0",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_without_form_data_1",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_channels",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_channels",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_email_channel",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_transactional_channels",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_and_transactional_with_invalid_sms_consent_method",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_and_transactional_with_social_instagram_message_method",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_with_social_instagram_message_method",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_transactional_with_social_instagram_message_method",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_valid_on_message_batch",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_marketing_and_transactional_with_social_instagram_message_method",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_transactional_with_social_instagram_message_method",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_with_form_data_with_extra_channels_0",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_with_form_data_with_extra_channels_1",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_does_process_a_retry",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_doesnt_process_old_messages",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_invalid_accesstoken_on_message_batch",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_invalid_on_message_batch",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_rate_limited_on_message_batch",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_valid_on_message_batch",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_mixed_retry_repeats_list_event_and_finishes_tracking_permissions",
+          "status": "fail",
+          "failureType": "assertion failure"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "artifact": "integration.xml",
+      "testCount": 55,
+      "counts": {
+        "pass": 55
+      },
+      "tests": [
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_emits_consent_granted_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_grants_open_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_invalid_email_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_no_ingest_access_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_emits_consent_revoked_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_deny_revokes_open_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestOpenTrackingProfilePermission::test_no_record_is_implicitly_unreachable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_emits_consent_granted_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_emits_consent_granted_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_grants_click_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_invalid_email_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_missing_email_returns_no_modification_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_no_ingest_access_exits_without_writing_permission",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_allow_propagates_consent_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_emits_consent_revoked_event_on_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_emits_consent_revoked_event_with_metadata",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_propagates_revocation_to_sibling_profile_with_same_email",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_deny_revokes_click_tracking_consent",
+          "status": "pass"
+        },
+        {
+          "id": ".TestClickTrackingProfilePermission::test_no_record_is_implicitly_unreachable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_does_process_a_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_doesnt_process_old_messages",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_invalid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_no_channels_included",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_with_form_data_0",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_with_form_data_1",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_without_form_data_0",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_only_whatsapp_channels_without_form_data_1",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_channels",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_channels",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_email_channel",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_pass_in_just_transactional_channels",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_and_transactional_with_invalid_sms_consent_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_and_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_marketing_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_sms_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_valid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_marketing_and_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_transactional_with_social_instagram_message_method",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_with_form_data_with_extra_channels_0",
+          "status": "pass"
+        },
+        {
+          "id": ".TestSubscriptionConsumerRegression::test_whatsapp_with_form_data_with_extra_channels_1",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_does_process_a_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_doesnt_process_old_messages",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_invalid_accesstoken_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_invalid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_rate_limited_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestShopifySubscriptionConsumerRegression::test_valid_on_message_batch",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "artifact": "pair.xml",
+      "testCount": 1,
+      "counts": {
+        "pass": 1
+      },
+      "tests": [
+        {
+          "id": ".TestConsumerPermissionSequence::test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "artifact": "unit-existing.xml",
+      "testCount": 27,
+      "counts": {
+        "pass": 27
+      },
+      "tests": [
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_legacy_message_without_channels_still_subscribes",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_only_allow_is_applied_as_permissions",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_decline_everything_submission_keeps_its_profile_data",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_click_only_decision_sends_no_open_tracking_request_0_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_decision_without_email_is_observable",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_closed_company_still_subscribes_but_writes_no_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_retryable_tracking_failure_uses_existing_retry_path",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "status": "pass"
+        },
+        {
+          "id": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_apply.TestApplyTrackingConsentRequests::test_sends_every_request_in_one_batch",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_apply.TestApplyTrackingConsentRequests::test_skips_the_service_when_there_are_no_requests",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_apply.TestApplyTrackingConsentRequests::test_drops_requests_for_a_closed_company",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_get_display_name_and_sample_data_includes_open_tracking",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_build_export_properties",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_export_keys_match_file_ingest_consent_properties",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[open_allow_click_deny]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[deny_both]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[click_only_allow]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_builds_requests_carrying_the_operation_and_profile_info[no_decisions]",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_profile_info_is_copied_onto_each_request",
+          "status": "pass"
+        },
+        {
+          "id": "tests.subscriptions.profile_permissions.tracking_consent.test_requests.TestBuildTrackingConsentRequests::test_rejects_an_unsupported_permission_operation",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "artifact": "unit-probes.xml",
+      "testCount": 18,
+      "counts": {
+        "pass": 18
+      },
+      "tests": [
+        {
+          "id": ".TestConsumerWorksheetCases::test_legacy_message_without_channels_still_subscribes",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_tracking_only_allow_is_applied_as_permissions",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_decline_everything_submission_keeps_its_profile_data",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_click_only_decision_sends_no_open_tracking_request_0_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_tracking_decision_without_email_is_observable",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_closed_company_still_subscribes_but_writes_no_tracking",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_retryable_tracking_failure_uses_existing_retry_path",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_tracking_requests_do_not_see_consent_added_by_subscribe",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_no_permission_exports_implicit_subscribed_without_timestamps",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_company_mismatch_skips_both_services",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_nonretryable_permission_error_propagates",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_retryable_permission_error_rejects_message_and_counts_error",
+          "status": "pass"
+        },
+        {
+          "id": ".TestConsumerWorksheetCases::test_replayed_mixed_message_repeats_subscribe_before_permissions",
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "frontendAssertions": [],
+  "caseAssertions": [
+    {
+      "id": "KC-01",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Consumer ALLOW creates both open/click permission rows with true outcomes and matching customer/subject/email identity."
+    },
+    {
+      "id": "KC-02",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+        ".TestConsumerWorksheetCases::test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_click_only_decision_sends_no_open_tracking_request_1_click_deny",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Click DENY persists false through the shared modify_permissions batch. Current consumer never calls unsubscribe_v2 for tracking."
+    },
+    {
+      "id": "KC-03",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_decline_everything_submission_keeps_its_profile_data",
+        ".TestConsumerWorksheetCases::test_decline_everything_submission_keeps_its_profile_data",
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_decline_everything_submission_keeps_its_profile_data",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_decline_everything_submission_keeps_its_profile_data",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "DENY-only still calls subscribe with empty channels to retain profile properties, then writes denial permissions. Real persistence verifies no marketing permission or list membership."
+    },
+    {
+      "id": "KC-04",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_only_allow_is_applied_as_permissions",
+        ".TestConsumerWorksheetCases::test_tracking_only_allow_is_applied_as_permissions",
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_tracking_only_allow_is_applied_as_permissions",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_tracking_only_allow_is_applied_as_permissions",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Tracking-only ALLOW calls subscribe with empty channels, then applies ALLOW via modify_permissions; it is no longer written inside subscribe. No marketing membership is inferred."
+    },
+    {
+      "id": "KC-05",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+        ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+        ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+        ".TestConsumerWorksheetCases::test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+        ".TestConsumerPermissionSequence::test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-existing",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-existing",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_0_open_allow_click_deny",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_1_open_deny_click_allow",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_mixed_marketing_and_tracking_split_between_subscribe_and_permissions_2_deny_both",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Mixed marketing/open ALLOW/click DENY ends with real list membership and true marketing/open permissions plus false click permission."
+    },
+    {
+      "id": "KC-06",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_tracking_decision_without_email_is_observable",
+        ".TestConsumerWorksheetCases::test_tracking_decision_without_email_is_observable"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_tracking_decision_without_email_is_observable",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_tracking_decision_without_email_is_observable",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "No-email tracking is skipped, emits SubscriptionExecutor.TrackingConsentDrop and the exact forms.subscription_executor_tracking_consent_drop_no_email counter; subscribe still receives original profile data."
+    },
+    {
+      "id": "KC-07",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_legacy_message_without_channels_still_subscribes",
+        "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+        ".TestConsumerWorksheetCases::test_legacy_message_without_channels_still_subscribes",
+        ".TestConsumerWorksheetCases::test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+        ".TestSubscriptionConsumerRegression::test_no_channels_included",
+        ".TestSubscriptionConsumerRegression::test_pass_in_just_marketing_email_channel"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_legacy_message_without_channels_still_subscribes",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-existing",
+          "name": "test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "class": "tests.onsite.kms.test_subscription_consumer.TestTrackingConsentSubscriptionConsumer",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_legacy_message_without_channels_still_subscribes",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_explicit_unspecified_tracking_fields_behave_like_legacy_message",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_no_channels_included",
+          "class": ".TestSubscriptionConsumerRegression",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_pass_in_just_marketing_email_channel",
+          "class": ".TestSubscriptionConsumerRegression",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Absent/UNSPECIFIED tracking fields preserve legacy subscribe channel dispatch and never invoke tracking modifications. Existing consumer channel regressions also execute."
+    },
+    {
+      "id": "KC-08",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerWorksheetCases::test_company_mismatch_skips_both_services"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-probes",
+          "name": "test_company_mismatch_skips_both_services",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "A message with a foreign company ID and a tracking DENY invokes neither subscribe nor modify_permissions."
+    },
+    {
+      "id": "KC-09",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestSubscriptionConsumerRegression::test_valid_on_message_batch",
+        ".TestShopifySubscriptionConsumerRegression::test_invalid_accesstoken_on_message_batch",
+        ".TestShopifySubscriptionConsumerRegression::test_rate_limited_on_message_batch",
+        ".TestShopifySubscriptionConsumerRegression::test_valid_on_message_batch"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "integration",
+          "name": "test_valid_on_message_batch",
+          "class": ".TestSubscriptionConsumerRegression",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_invalid_accesstoken_on_message_batch",
+          "class": ".TestShopifySubscriptionConsumerRegression",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_rate_limited_on_message_batch",
+          "class": ".TestShopifySubscriptionConsumerRegression",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_valid_on_message_batch",
+          "class": ".TestShopifySubscriptionConsumerRegression",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Existing Shopify consumer tests exercise valid, invalid-token and rate-limited messages with intercepted Shopify responses and expected subscription dispatch."
+    },
+    {
+      "id": "SH-03",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerPermissionSequence::test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "pair",
+          "name": "test_shopify_and_tracking_pair_adds_one_membership_and_one_list_event",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Both real consumers execute in order: Shopify email marketing creates one membership and one list event; the tracking companion preserves those counts and writes open ALLOW/click DENY."
+    },
+    {
+      "id": "PR-01",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Both real ORM permission rows retain the email identifier and identical customer_id/subject_id; action and ALLOW/DENY outcomes match each submitted operation."
+    },
+    {
+      "id": "PR-02",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+        "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_build_export_properties"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_get_display_name_and_sample_data_includes_click_tracking_when_enabled",
+          "class": "tests.subscriptions.profile_permissions.tracking_consent.test_export",
+          "status": "pass"
+        },
+        {
+          "run": "unit-existing",
+          "name": "test_build_export_properties",
+          "class": "tests.subscriptions.profile_permissions.tracking_consent.test_export",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed export builder/metadata tests with deterministic permission values. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Export properties include email_open_tracking_consent/email_click_tracking_consent and their timestamps when values are recorded. Chooser metadata includes click fields with its gate enabled."
+    },
+    {
+      "id": "PR-03",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        "tests.subscriptions.profile_permissions.tracking_consent.test_export::test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+        ".TestConsumerWorksheetCases::test_no_permission_exports_implicit_subscribed_without_timestamps"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-existing",
+          "name": "test_resolve_for_export_defaults_missing_or_never_subscribed_to_subscribed",
+          "class": "tests.subscriptions.profile_permissions.tracking_consent.test_export",
+          "status": "pass"
+        },
+        {
+          "run": "unit-probes",
+          "name": "test_no_permission_exports_implicit_subscribed_without_timestamps",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed the real export resolution and property builder functions. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Current opt-out export resolves no-record/NEVER_SUBSCRIBED to SUBSCRIBED. Both consent keys are emitted without timestamps, contrary to the sheet's omission expectation."
+    },
+    {
+      "id": "PR-04",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Sequential ALLOW\u2192DENY\u2192ALLOW via the real consumer leaves both permissions ALLOW, with effective_date and recorded_date equal to the final controlled timestamp."
+    },
+    {
+      "id": "PR-05",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerPermissionSequence::test_allow_deny_allow_persists_identity_latest_time_and_no_marketing"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "integration",
+          "name": "test_allow_deny_allow_persists_identity_latest_time_and_no_marketing",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "For ALLOW, DENY and repeated ALLOW, both tracking decisions persist while email marketing permission and list membership remain absent."
+    },
+    {
+      "id": "FM-01",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        ".TestConsumerWorksheetCases::test_retryable_permission_error_rejects_message_and_counts_error",
+        ".TestConsumerPermissionSequence::test_exhausted_retryable_workflow_error_is_reported_without_message_retry"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-probes",
+          "name": "test_retryable_permission_error_rejects_message_and_counts_error",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_exhausted_retryable_workflow_error_is_reported_without_message_retry",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "An escaping UnableToObtainLockException invokes the real retry helper/chariot_reject. However, an exhausted retryable workflow error is swallowed by modify_permissions's default configuration: attempted DENY returns normally, does not invoke attempt_retry or consumer error/drop counters, and the prior ALLOW persists."
+    },
+    {
+      "id": "FM-02",
+      "recordedStatus": "pass",
+      "testNodeIds": [
+        ".TestConsumerWorksheetCases::test_nonretryable_permission_error_propagates",
+        ".TestConsumerPermissionSequence::test_failed_workflow_error_is_reported_without_message_retry"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-probes",
+          "name": "test_nonretryable_permission_error_propagates",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_failed_workflow_error_is_reported_without_message_retry",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "A terminal permission workflow failure reports to Sentry but returns normally with no consumer retry or consumer error/drop counters; the prior persisted click ALLOW remains after attempted DENY. Separately, an unexpected ValueError escaping modify_permissions propagates, so not every nonretryable exception is silently swallowed."
+    },
+    {
+      "id": "FM-03",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        ".TestConsumerWorksheetCases::test_replayed_mixed_message_repeats_subscribe_before_permissions",
+        ".TestConsumerPermissionSequence::test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-probes",
+          "name": "test_replayed_mixed_message_repeats_subscribe_before_permissions",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        },
+        {
+          "run": "integration",
+          "name": "test_mixed_retry_emits_one_list_event_and_finishes_tracking_permissions",
+          "class": ".TestConsumerPermissionSequence",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed real local consumer, subscribe service, permission workflows and ORM reads; outbound event publishing intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "An escaping tracking-boundary failure after successful marketing causes explicit replay to call subscribe again. In the real persisted scenario, list-event creation counts are [1,1] after the two attempts: membership remains and tracking ends correct, with no second list event. The old duplicate-event claim is not reproduced."
+    },
+    {
+      "id": "FM-04",
+      "recordedStatus": "fail",
+      "testNodeIds": [
+        ".TestConsumerWorksheetCases::test_replayed_mixed_message_repeats_subscribe_before_permissions"
+      ],
+      "runtimeChecks": [
+        {
+          "run": "unit-probes",
+          "name": "test_replayed_mixed_message_repeats_subscribe_before_permissions",
+          "class": ".TestConsumerWorksheetCases",
+          "status": "pass"
+        }
+      ],
+      "scope": "Executed local consumer/permission boundary assertions; remote service calls intercepted. Source app0437a84a74a1; synthetic local records only.",
+      "observation": "Current consumer executes subscribe before modify_permissions. Current sync adapter also calls subscribe before the shared tracking apply helper; the sheet's unsubscribe-first divergence is obsolete."
+    }
+  ]
+}
